@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SPARKMENTO AI TECH LABS - Skill to Success</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    /* Hero background gradient */
+    .hero-gradient {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Floating light overlay */
+    .hero-gradient::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 80%, rgba(251, 191, 36, 0.1) 0%, transparent 50%);
+      animation: float 6s ease-in-out infinite;
+      z-index: 1;
+    }
+
+    /* Glitter effect overlay */
+    .glitter {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(2px 2px at 20% 30%, rgba(255, 215, 0, 0.8), transparent),
+                        radial-gradient(1.5px 1.5px at 60% 70%, rgba(173, 216, 230, 0.8), transparent),
+                        radial-gradient(2px 2px at 80% 20%, rgba(255, 223, 0, 0.7), transparent),
+                        radial-gradient(1.5px 1.5px at 30% 80%, rgba(255, 255, 255, 0.5), transparent);
+      background-repeat: repeat;
+      background-size: 400px 400px;
+      animation: sparkle 8s infinite linear;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    @keyframes sparkle {
+      0% {
+        background-position: 0 0, 50px 50px, 100px 100px, 150px 150px;
+      }
+      100% {
+        background-position: 400px 400px, 450px 450px, 500px 500px, 550px 550px;
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(20px);
+      }
+    }
+
+    .nav-scroll {
+      transition: all 0.3s ease;
+    }
+
+    .nav-scroll.scrolled {
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(251, 191, 36, 0.3);
+    }
+
+    .btn-secondary {
+      border: 2px solid #fbbf24;
+      color: #fbbf24;
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      background: #fbbf24;
+      color: #0f172a;
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-white">
+
+  <!-- Navigation Bar -->
+  <nav class="nav-scroll fixed w-full top-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <!-- Logo -->
+        <div class="flex items-center space-x-2">
+          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-10-28%20at%206.02.20%20PM-YgaPaNqAueQDFFS6fdgW01szOqC410.jpeg" alt="SPARKMENTO Logo" class="h-12 w-auto" />
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#home" class="hover:text-amber-400 transition">Home</a>
+          <a href="#about" class="hover:text-amber-400 transition">About</a>
+          <a href="#courses" class="hover:text-amber-400 transition">Courses</a>
+          <a href="#internships" class="hover:text-amber-400 transition">Internships</a>
+          <a href="#contact" class="hover:text-amber-400 transition">Contact</a>
+        </div>
+
+        <!-- Apply Button (Desktop) -->
+        <div class="hidden md:block">
+          <button class="btn-primary px-6 py-2 rounded-lg font-semibold text-slate-900">
+            Apply Now
+          </button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="menu-btn" class="md:hidden flex flex-col space-y-1 focus:outline-none">
+          <span class="w-6 h-0.5 bg-amber-400"></span>
+          <span class="w-6 h-0.5 bg-amber-400"></span>
+          <span class="w-6 h-0.5 bg-amber-400"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95 backdrop-blur-md px-6 py-4 border-t border-slate-800">
+      <div class="flex flex-col space-y-4 text-lg">
+        <a href="#home" class="hover:text-amber-400 transition">Home</a>
+        <a href="#about" class="hover:text-amber-400 transition">About</a>
+        <a href="#courses" class="hover:text-amber-400 transition">Courses</a>
+        <a href="#internships" class="hover:text-amber-400 transition">Internships</a>
+        <a href="#contact" class="hover:text-amber-400 transition">Contact</a>
+        <button class="btn-primary w-full py-2 rounded-lg font-semibold text-slate-900">
+          Apply Now
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero-gradient h-screen flex items-center relative">
+    <!-- Glitter overlay -->
+    <div class="glitter"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- Left Content -->
+        <div class="space-y-6">
+          <h1 class="text-5xl md:text-6xl font-bold leading-tight">
+            <span class="text-blue-400">Skill</span> to <span class="text-amber-400">Success</span>
+          </h1>
+          <p class="text-xl text-gray-300">
+            Empowering Learners through Technology, Innovation & Mentorship
+          </p>
+          <p class="text-lg text-amber-400 font-semibold">
+            Learn. Build. Innovate. Succeed.
+          </p>
+          <div class="flex gap-4 pt-4">
+            <button class="btn-primary px-8 py-3 rounded-lg font-semibold text-slate-900">
+              Explore Courses
+            </button>
+            <button class="btn-secondary px-8 py-3 rounded-lg font-semibold">
+              Join Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Visual -->
+        <div class="hidden md:flex justify-center relative mt-20">
+          <div class="relative w-[80%]">
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-amber-400 rounded-[50px] opacity-20 blur-3xl animate-pulse"></div>
+            <img src="./assets/images/download (6).jpg" class="relative z-10 rounded-[50px] object-cover" alt="Hero Visual" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- Scroll & Mobile Menu Scripts -->
+  <script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const nav = document.querySelector('.nav-scroll');
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      menuBtn.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

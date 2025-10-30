@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPARKMENTO AI TECH LABS - Skill to Success</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      /* Hero background gradient */
+      .hero-gradient {
+        background: linear-gradient(
+          135deg,
+          #0f172a 0%,
+          #1e3a8a 50%,
+          #0f172a 100%
+        );
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Floating light overlay */
+      .hero-gradient::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+            circle at 20% 50%,
+            rgba(59, 130, 246, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 80%,
+            rgba(251, 191, 36, 0.1) 0%,
+            transparent 50%
+          );
+        animation: float 6s ease-in-out infinite;
+        z-index: 1;
+      }
+
+      /* Glitter effect overlay */
+      .glitter {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: radial-gradient(
+            2px 2px at 20% 30%,
+            rgba(255, 215, 0, 0.8),
+            transparent
+          ),
+          radial-gradient(
+            1.5px 1.5px at 60% 70%,
+            rgba(173, 216, 230, 0.8),
+            transparent
+          ),
+          radial-gradient(
+            2px 2px at 80% 20%,
+            rgba(255, 223, 0, 0.7),
+            transparent
+          ),
+          radial-gradient(
+            1.5px 1.5px at 30% 80%,
+            rgba(255, 255, 255, 0.5),
+            transparent
+          );
+        background-repeat: repeat;
+        background-size: 400px 400px;
+        animation: sparkle 8s infinite linear;
+        pointer-events: none;
+        z-index: 2;
+      }
+
+      @keyframes sparkle {
+        0% {
+          background-position: 0 0, 50px 50px, 100px 100px, 150px 150px;
+        }
+        100% {
+          background-position: 400px 400px, 450px 450px, 500px 500px,
+            550px 550px;
+        }
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(20px);
+        }
+      }
+
+      .nav-scroll {
+        transition: all 0.3s ease;
+      }
+
+      .nav-scroll.scrolled {
+        background: rgba(15, 23, 42, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(251, 191, 36, 0.3);
+      }
+
+      .btn-secondary {
+        border: 2px solid #fbbf24;
+        color: #fbbf24;
+        transition: all 0.3s ease;
+      }
+
+      .btn-secondary:hover {
+        background: #fbbf24;
+        color: #0f172a;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-950 text-white">
+    <!-- Navigation Bar -->
+    <nav class="nav-scroll fixed w-full top-0 z-50 transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <!-- Logo -->
+          <div class="flex items-center space-x-2">
+            <img
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-10-28%20at%206.02.20%20PM-YgaPaNqAueQDFFS6fdgW01szOqC410.jpeg"
+              alt="SPARKMENTO Logo"
+              class="h-12 w-auto"
+            />
+          </div>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="#home" class="hover:text-amber-400 transition">Home</a>
+            <a href="#about" class="hover:text-amber-400 transition">About</a>
+            <a href="#courses" class="hover:text-amber-400 transition"
+              >Courses</a
+            >
+            <a href="#internships" class="hover:text-amber-400 transition"
+              >Internships</a
+            >
+            <a href="#contact" class="hover:text-amber-400 transition"
+              >Contact</a
+            >
+          </div>
+
+          <!-- Apply Button (Desktop) -->
+          <div class="hidden md:block">
+            <button
+              class="btn-primary px-6 py-2 rounded-lg font-semibold text-slate-900"
+            >
+              Apply Now
+            </button>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button
+            id="menu-btn"
+            class="md:hidden flex flex-col space-y-1 focus:outline-none"
+          >
+            <span class="w-6 h-0.5 bg-amber-400"></span>
+            <span class="w-6 h-0.5 bg-amber-400"></span>
+            <span class="w-6 h-0.5 bg-amber-400"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-slate-900/95 backdrop-blur-md px-6 py-4 border-t border-slate-800"
+      >
+        <div class="flex flex-col space-y-4 text-lg">
+          <a href="#home" class="hover:text-amber-400 transition">Home</a>
+          <a href="#about" class="hover:text-amber-400 transition">About</a>
+          <a href="#courses" class="hover:text-amber-400 transition">Courses</a>
+          <a href="#internships" class="hover:text-amber-400 transition"
+            >Internships</a
+          >
+          <a href="#contact" class="hover:text-amber-400 transition">Contact</a>
+          <button
+            class="btn-primary w-full py-2 rounded-lg font-semibold text-slate-900"
+          >
+            Apply Now
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="hero-gradient h-screen flex items-center relative"
+    >
+      <!-- Glitter overlay -->
+      <div class="glitter"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <!-- Left Content -->
+          <div class="space-y-6">
+            <h1 class="text-5xl md:text-6xl font-bold leading-tight">
+              <span class="text-blue-400">Skill</span> to
+              <span class="text-amber-400">Success</span>
+            </h1>
+            <p class="text-xl text-gray-300">
+              Empowering Learners through Technology, Innovation & Mentorship
+            </p>
+            <p class="text-lg text-amber-400 font-semibold">
+              Learn. Build. Innovate. Succeed.
+            </p>
+            <div class="flex gap-4 pt-4">
+              <button
+                class="btn-primary px-8 py-3 rounded-lg font-semibold text-slate-900"
+              >
+                Explore Courses
+              </button>
+              <button class="btn-secondary px-8 py-3 rounded-lg font-semibold">
+                Join Now
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Visual -->
+          <div class="hidden md:flex justify-center relative mt-20">
+            <div class="relative w-[80%]">
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-blue-500 to-amber-400 rounded-[50px] opacity-20 blur-3xl animate-pulse"
+              ></div>
+              <img
+                src="./assets/images/download (6).jpg"
+                class="relative z-10 rounded-[50px] object-cover"
+                alt="Hero Visual"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-slate-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <!-- Image -->
+          <div
+            class="bg-gradient-to-br from-blue-500 to-amber-400 rounded-lg p-1"
+          >
+            <div
+              class="bg-slate-800 rounded-lg h-96 flex items-center justify-center"
+            >
+              <!-- <div class="text-center"> -->
+              <!-- <div class="text-6xl mb-4"> -->
+              <img
+                src="./assets/images/Gemini_Generated_Image_g73il1g73il1g73i.png"
+                class="w-[100%] h-[100%] object-cover"
+              />
+              <!-- </div> -->
+              <!-- <p class="text-gray-400">AI Lab Environment</p> -->
+              <!-- </div> -->
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="space-y-6">
+            <h2 class="text-4xl font-bold">
+              Welcome to <span class="text-amber-400">SPARKMENTO</span>
+            </h2>
+            <p class="text-gray-300 leading-relaxed">
+              A proud division of SPARK LEARNINGS, a pioneer PSC & academic
+              training firm in Trivandrum. SPARKMENTO focuses on AI, IT, and
+              Future Technologies — bridging classroom learning with real-world
+              skills.
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+              Our mission is to shape next-generation innovators through
+              practical training, mentorship, and live projects. We blend
+              academic excellence with industry exposure — helping students
+              master the technologies that shape the future.
+            </p>
+            <button
+              class="btn-primary px-8 py-3 rounded-lg font-semibold text-slate-900 mt-4"
+            >
+              → Know More About Us
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Courses -->
+    <section id="courses" class="py-20 bg-slate-950">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4">Top Career-Oriented Programs</h2>
+          <p class="text-gray-400 text-lg">
+            Master the skills that shape tomorrow's technology
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-6">
+          <!-- Course Card 1 -->
+          <div
+            class="course-card bg-slate-900 rounded-lg p-6 hover:bg-slate-800"
+          >
+            <div class="text-4xl mb-4">
+              <img src="./assets/images/MachineLearning.png" />
+            </div>
+            <h3 class="text-xl font-bold mb-2">AI & Machine Learning</h3>
+            <p class="text-gray-400 text-sm mb-4">
+              Master AI algorithms and ML models
+            </p>
+            <button class="text-amber-400 font-semibold hover:text-amber-300">
+              View Details →
+            </button>
+          </div>
+
+          <!-- Course Card 2 -->
+          <div
+            class="course-card bg-slate-900 rounded-lg p-6 hover:bg-slate-800"
+          >
+            <div class="text-4xl mb-4">
+              <img src="./assets/images/webdevelopment.jpg" />
+            </div>
+            <h3 class="text-xl font-bold mb-2">Web Development</h3>
+            <p class="text-gray-400 text-sm mb-4">
+              Build modern web applications
+            </p>
+            <button class="text-amber-400 font-semibold hover:text-amber-300">
+              View Details →
+            </button>
+          </div>
+
+          <!-- Course Card 3 -->
+          <div
+            class="course-card bg-slate-900 rounded-lg p-6 hover:bg-slate-800"
+          >
+            <div class="text-4xl mb-4">
+              <img src="./assets/images/appDevelopment (2).jpg" />
+            </div>
+            <h3 class="text-xl font-bold mb-2">App Development</h3>
+            <p class="text-gray-400 text-sm mb-4">
+              Create iOS & Android applications
+            </p>
+            <button class="text-amber-400 font-semibold hover:text-amber-300">
+              View Details →
+            </button>
+          </div>
+
+          <!-- Course Card 4 -->
+          <div
+            class="course-card bg-slate-900 rounded-lg p-6 hover:bg-slate-800"
+          >
+            <div class="text-4xl mb-4">
+              <img src="./assets/images/iot.jpg" />
+            </div>
+            <h3 class="text-xl font-bold mb-2">IoT & Embedded</h3>
+            <p class="text-gray-400 text-sm mb-4">
+              Smart devices & IoT solutions
+            </p>
+            <button class="text-amber-400 font-semibold hover:text-amber-300">
+              View Details →
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-20 bg-slate-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4">Why Choose SPARKMENTO?</h2>
+          <p class="text-gray-400 text-lg">
+            We blend academic excellence with industry exposure — helping
+            students master the technologies that shape the future.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Feature 1 -->
+          <div
+            class="feature-card bg-slate-800 rounded-lg p-8 border border-blue-500 border-opacity-20 text-center"
+          >
+            <div class="flex justify-center mb-4">
+              <i data-lucide="users" class="w-10 h-10 text-blue-400 bg-blue-500/20 p-2 rounded-[10px]" ></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Expert Mentors</h3>
+            <p class="text-gray-400">
+              Learn from industry professionals with years of experience
+            </p>
+          </div>
+
+          <!-- Feature 2 -->
+          <div
+            class="feature-card bg-slate-800 rounded-lg p-8 border border-blue-500 border-opacity-20 text-center"
+          >
+            <div class="flex justify-center mb-4">
+              <i data-lucide="cpu" class="w-10 h-10 text-amber-400 bg-amber-500/20 p-2 rounded-[10px]"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">AI-Powered Labs</h3>
+            <p class="text-gray-400">
+              State-of-the-art learning environment with cutting-edge tools
+            </p>
+          </div>
+
+          <!-- Feature 3 -->
+          <div
+            class="feature-card bg-slate-800 rounded-lg p-8 border border-blue-500 border-opacity-20 text-center"
+          >
+            <div class="flex justify-center mb-4">
+              <i data-lucide="hammer" class="w-10 h-10 text-blue-400 bg-blue-500/20 p-2 rounded-[10px]"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Project-Based Training</h3>
+            <p class="text-gray-400">
+              Build real-world projects that matter to your career
+            </p>
+          </div>
+
+          <!-- Feature 4 -->
+          <div
+            class="feature-card bg-slate-800 rounded-lg p-8 border border-blue-500 border-opacity-20 text-center"
+          >
+            <div class="flex justify-center mb-4">
+              <i data-lucide="briefcase" class="w-10 h-10 text-amber-400 bg-amber-500/20 p-2 rounded-[10px]"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Internship Support</h3>
+            <p class="text-gray-400">
+              Placement assistance and internship opportunities
+            </p>
+          </div>
+
+          <!-- Feature 5 -->
+          <div
+            class="feature-card bg-slate-800 rounded-lg p-8 border border-blue-500 border-opacity-20 text-center"
+          >
+            <div class="flex justify-center mb-4">
+              <i data-lucide="handshake" class="w-10 h-10 text-blue-400 bg-blue-500/20 p-2 rounded-[10px]"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Industry Collaboration</h3>
+            <p class="text-gray-400">
+              Partner with leading tech companies and organizations
+            </p>
+          </div>
+
+          <!-- Feature 6 -->
+          <div
+            class="feature-card bg-slate-800 rounded-lg p-8 border border-blue-500 border-opacity-20 text-center"
+          >
+            <div class="flex justify-center mb-4">
+              <i data-lucide="award" class="w-10 h-10 text-amber-400 bg-amber-500/20 p-2 rounded-[10px]"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Certification</h3>
+            <p class="text-gray-400">
+              Industry-recognized certifications upon completion
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Internships Section -->
+    <section
+      id="internships"
+      class="py-20 bg-gradient-to-r from-blue-900 to-slate-900"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <!-- Content -->
+          <div class="space-y-6">
+            <h2 class="text-4xl font-bold">Work on Real-World Projects</h2>
+            <p class="text-gray-300 leading-relaxed text-lg">
+              Gain hands-on experience through internships and live projects in
+              AI, Web, App, and IoT domains.
+            </p>
+            <p class="text-amber-400 font-semibold text-lg">
+              Learn by building — not memorizing.
+            </p>
+            <ul class="space-y-3 text-gray-300">
+              <li class="flex items-center font-bold">
+                <span class="text-amber-400 mr-3 bg-yellow-400/20 px-2">✓</span> Live project
+                experience
+              </li>
+              <li class="flex items-center font-bold">
+                <span class="text-amber-400 mr-3 bg-yellow-400/20 px-2">✓</span> Industry mentorship
+              </li>
+              <li class="flex items-center font-bold">
+                <span class="text-amber-400 mr-3 bg-yellow-400/20 px-2">✓</span> Portfolio building
+              </li>
+              <li class="flex items-center font-bold">
+                <span class="text-amber-400 mr-3 bg-yellow-400/20 px-2">✓</span> Job placement support
+              </li>
+            </ul>
+            <button
+              class="btn-primary px-8 py-3 rounded-lg font-semibold text-slate-900 mt-4"
+            >
+              → Explore Internship Programs
+            </button>
+          </div>
+
+          <!-- Visual -->
+          <div
+            class="bg-slate-800 rounded-lg h-96 flex items-center justify-center border border-amber-400 border-opacity-30"
+          >
+            <!-- <div class="text-center"> -->
+              <!-- <div class="text-6xl mb-4"> -->
+                <img src="./assets/images/internship.png" class="h-[100%] w-[100%] object-cover">
+              <!-- </div> -->
+              <!-- <p class="text-gray-400">Internship & Projects</p> -->
+            <!-- </div> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-slate-950">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-4xl font-bold mb-6">
+          Join Kerala's Most Innovative IT Training Platform
+        </h2>
+        <p class="text-xl text-gray-300 mb-8">
+          Start your journey toward a career in AI, Software, and Smart
+          Technologies.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <button
+            class="btn-primary px-8 py-4 rounded-lg font-semibold text-slate-900 text-lg"
+          >
+            Apply Now
+          </button>
+          <button
+            class="btn-secondary px-8 py-4 rounded-lg font-semibold text-lg"
+          >
+            Request Callback
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-slate-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-12">
+          <!-- Contact Info -->
+          <div class="space-y-8">
+            <div>
+              <h2 class="text-3xl font-bold mb-6">Get In Touch</h2>
+              <div class="space-y-4">
+                <div>
+                  <p class="text-amber-400 font-semibold mb-2">Address</p>
+                  <p class="text-gray-300">
+                    SPARKMENTO AI TECH LABS<br />Trivandrum, Kanjiramkulam<br />Kerala,
+                    India
+                  </p>
+                </div>
+                <div>
+                  <p class="text-amber-400 font-semibold mb-2">Phone</p>
+                  <p class="text-gray-300">+91 XXXXXXXX</p>
+                </div>
+                <div>
+                  <p class="text-amber-400 font-semibold mb-2">Email</p>
+                  <p class="text-gray-300">info.sparkmento@gmail.com</p>
+                </div>
+                <div>
+                  <p class="text-amber-400 font-semibold mb-3">Follow Us</p>
+                  <div class="flex gap-4">
+                    <a
+                      href="#"
+                      class="text-blue-400 hover:text-blue-300 text-2xl"
+                      >f</a
+                    >
+                    <a
+                      href="#"
+                      class="text-pink-400 hover:text-pink-300 text-2xl"
+                      >📷</a
+                    >
+                    <a href="#" class="text-red-400 hover:text-red-300 text-2xl"
+                      >▶</a
+                    >
+                    <a
+                      href="#"
+                      class="text-blue-500 hover:text-blue-400 text-2xl"
+                      >in</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div
+            class="bg-slate-800 rounded-lg p-8 border border-blue-500 border-opacity-20"
+          >
+            <h3 class="text-2xl font-bold mb-6">Send us a Message</h3>
+            <form class="space-y-4">
+              <input
+                type="text"
+                placeholder="Your Name"
+                class="w-full bg-slate-700 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-400"
+              />
+              <input
+                type="email"
+                placeholder="Your Email"
+                class="w-full bg-slate-700 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-400"
+              />
+              <select
+                class="w-full bg-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-amber-400"
+              >
+                <option value="">Select Course Interested</option>
+                <option value="ai">AI & Machine Learning</option>
+                <option value="web">Web Development</option>
+                <option value="app">App Development</option>
+                <option value="iot">IoT & Embedded</option>
+              </select>
+              <textarea
+                placeholder="Your Message"
+                rows="4"
+                class="w-full bg-slate-700 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-400"
+              ></textarea>
+              <button
+                type="submit"
+                class="btn-primary w-full py-3 rounded-lg font-semibold text-slate-900"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-800 py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8 mb-8">
+          <!-- About -->
+          <div>
+            <img
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-10-28%20at%206.02.20%20PM-YgaPaNqAueQDFFS6fdgW01szOqC410.jpeg"
+              alt="SPARKMENTO Logo"
+              class="h-12 w-auto mb-3"
+            />
+            <!-- <h4 class="font-bold mb-4 text-amber-400">About SPARKMENTO</h4> -->
+            <p class="text-gray-400 text-sm">
+              A division of Spark Learnings, pioneering AI and IT training in
+              Kerala.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h4 class="font-bold mb-4 text-amber-400">Quick Links</h4>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li>
+                <a href="#courses" class="hover:text-amber-400">Courses</a>
+              </li>
+              <li>
+                <a href="#internships" class="hover:text-amber-400"
+                  >Internships</a
+                >
+              </li>
+              <li>
+                <a href="#contact" class="hover:text-amber-400">Contact</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Resources -->
+          <div>
+            <h4 class="font-bold mb-4 text-amber-400">Resources</h4>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li><a href="#" class="hover:text-amber-400">Brochure</a></li>
+              <li><a href="#" class="hover:text-amber-400">FAQs</a></li>
+              <li>
+                <a href="#" class="hover:text-amber-400">Franchise Info</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Social -->
+          <div>
+            <h4 class="font-bold mb-4 text-amber-400">Connect</h4>
+            <p class="text-gray-400 text-sm mb-3">Follow us on social media</p>
+            <div class="flex gap-3">
+              <a
+                href="#"
+                class="w-8 h-8 bg-blue-600 rounded flex items-center justify-center hover:bg-blue-500"
+                >f</a
+              >
+              <a
+                href="#"
+                class="w-8 h-8 bg-pink-600 rounded flex items-center justify-center hover:bg-pink-500"
+                >📷</a
+              >
+              <a
+                href="#"
+                class="w-8 h-8 bg-red-600 rounded flex items-center justify-center hover:bg-red-500"
+                >▶</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-slate-800 pt-8 text-center text-gray-400 text-sm"
+        >
+          <p>© 2025 SPARKMENTO AI TECH LABS — Skill to Success</p>
+          <p class="mt-2">A Division of Spark Learnings | Trivandrum, Kerala</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll & Mobile Menu Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+    <script>
+      // Navbar scroll effect
+      window.addEventListener("scroll", function () {
+        const nav = document.querySelector(".nav-scroll");
+        if (window.scrollY > 50) {
+          nav.classList.add("scrolled");
+        } else {
+          nav.classList.remove("scrolled");
+        }
+      });
+
+      // Mobile menu toggle
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        menuBtn.classList.toggle("open");
+      });
+    </script>
+  </body>
+</html>
