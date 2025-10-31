@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        AI-Powered Digital Media Creations - Master Digital Content Creation
+    </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/favIcon.png">
+
+    <link href="../assets/style/style.css" rel="stylesheet" />
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #fdc608 0%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-950 text-white">
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-yellow-500/20">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            <div class="text-[8px] w-[200px]">
+                <a href="../index.html" class="flex flex-col items-center">
+                    <img src="../assets/images/QBix_AICODINGLABS__ver_2_1-removebg-preview.png" width="55%" />
+                </a>
+            </div>
+
+            <div class="hidden md:flex gap-8">
+                <a href="../index.html" class="hover:text-yellow-500 transition-smooth">Home</a>
+                <a href="../index.html#about" class="hover:text-yellow-400 transition-smooth">About</a>
+                <a href="../index.html#courses" class="hover:text-yellow-500 transition-smooth">Courses</a>
+                <a href="../index.html#partners" class="hover:text-yellow-500 transition-smooth">Partner Us</a>
+                <a href="../index.html#contact" class="hover:text-yellow-500 transition-smooth">Contact</a>
+            </div>
+
+            <button class="md:hidden" onclick="toggleMenu()">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </nav>
+
+        <div id="mobileMenu" class="mobile-menu md:hidden bg-slate-900 border-t border-yellow-500/20">
+            <div class="px-4 py-4 space-y-3">
+                <a href="../index.html" class="block hover:text-yellow-500 transition-smooth">Home</a>
+                <a href="../index.html#about" class="block hover:text-yellow-500 transition-smooth">About</a>
+                <a href="../index.html#courses" class="block hover:text-yellow-500 transition-smooth">Courses</a>
+                <a href="../index.html#partners" class="block hover:text-yellow-500 transition-smooth">Partner Us</a>
+                <a href="../index.html#contact" class="block hover:text-yellow-500 transition-smooth">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 animated-bg relative bg-slate-900/50">
+        <div class="max-w-6xl mx-auto text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                Master <span class="gradient-text">AI-Powered</span> Digital Media
+                Creation
+            </h1>
+
+            <p class="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
+                Be Your Own Boss Start Freelancing, Build Your Brand, Earn from
+                Anywhere!
+            </p>
+            <div class="flex justify-center gap-4 animate-fade-in-up stagger-2">
+                <a href="../index.html#courses">
+                    <button
+                        class="px-8 py-3 bg-yellow-500 rounded-lg font-semibold transition-transform transform hover:scale-105">
+                        Explore Courses
+                    </button>
+                </a>
+                <a href="../index.html#contact">
+                    <button
+                        class="px-8 py-3 border-2 border-yellow-500 hover:bg-yellow-500/10 rounded-lg font-semibold transition-transform">
+                        Join Now
+                    </button>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-16">
+                <div
+                    class="p-6 rounded-lg bg-slate-900/50 border border-yellow-500/20 hover:border-yellow-500/50 transition-all text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-yellow-400 mb-2">4</div>
+                    <p class="text-slate-400 text-sm md:text-base">Months Duration</p>
+                </div>
+
+                <div
+                    class="p-6 rounded-lg bg-slate-900/50 border border-yellow-500/20 hover:border-yellow-500/50 transition-all text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-yellow-400 mb-2">6+</div>
+                    <p class="text-slate-400 text-sm md:text-base">Real Projects</p>
+                </div>
+
+                <div
+                    class="p-6 rounded-lg bg-slate-900/50 border border-yellow-500/20 hover:border-yellow-500/50 transition-all text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-yellow-400 mb-2">100%</div>
+                    <p class="text-slate-400 text-sm md:text-base">Practical Learning</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Course Overview -->
+    <section id="course" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl text-center font-bold mb-4">
+                What You'll <span class="text-yellow-400">Learn</span>
+            </h2>
+            <p class=" mb-10 text-center text-gray-400">
+                A comprehensive 4-month immersive program designed for beginners and
+                professionals
+            </p>
+
+            <div
+                class="grid grid-cols-1 md:grid-cols-10 items-center bg-slate-900/50 border border-yellow-500/20 hover:border-yellow-500/50 transition-all rounded-lg p-6 mb-6">
+                <div class="md:col-span-3 mb-6 md:mb-0 h-[200px]">
+                    <img src="../assets/images/Digital-Media-Creations.png" alt="AI Digital Media"
+                        class="rounded-lg shadow-lg w-[100%] h-[100%] object-cover" />
+                </div>
+
+                <div class="md:col-span-7 md:pl-6">
+                    <p class="text-lg text-slate-300 leading-relaxed mb-6">
+                        Step into the future of digital storytelling with our AI-Powered
+                        Digital Media Creations course. Learn how to create short films,
+                        animations, cartoons, video ads, posters, YouTube content, reels,
+                        scripts, voice-overs, video editing, and sound recording using
+                        cutting-edge AI tools.
+                    </p>
+
+                    <p class="text-lg text-slate-300 leading-relaxed">
+                        This 4-month immersive program includes projects, assignments, and
+                        seminars designed to give you practical experience. Whether online
+                        or offline, our course is designed for beginners and professionals
+                        to gain the professional skills to succeed in the digital media
+                        industry.
+                    </p>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6 text-white">
+                <!-- Duration & Schedule -->
+                <div class="highlight-item p-6 rounded-lg">
+                    <h3 class="flex items-center text-xl font-bold text-yellow-400 mb-3 gap-2">
+                        <svg class="w-6 h-6 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-8V6a.75.75 0 00-1.5 0v4.25c0 .2.08.39.22.53l2.5 2.5a.75.75 0 101.06-1.06L10.75 10z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        Duration & Schedule
+                    </h3>
+                    <p class="text-slate-300">
+                        <strong>4 Months</strong> | 5 Days/Week | 3 Hours/Day<br />
+                        <span class="text-sm text-slate-400">80% minimum attendance required</span>
+                    </p>
+                </div>
+
+                <!-- Learning Mode -->
+                <div class="highlight-item p-6 rounded-lg">
+                    <h3 class="flex items-center text-xl font-bold text-yellow-400 mb-3 gap-2">
+                        <svg class="w-6 h-6 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M3 5a2 2 0 012-2h10a2 2 0 012 2v7H3V5zm14 9H3a2 2 0 00-2 2v1h18v-1a2 2 0 00-2-2z" />
+                        </svg>
+                        Learning Mode
+                    </h3>
+                    <p class="text-slate-300">
+                        <strong>Online & Offline</strong><br />
+                         <span class="text-sm text-slate-400"> Choose the mode that fits your schedule and learning style</span>
+                       
+                    </p>
+                </div>
+
+                <!-- Course Code -->
+                <div class="highlight-item p-6 rounded-lg">
+                    <h3 class="flex items-center text-xl font-bold text-yellow-400 mb-3 gap-2">
+                        <svg class="w-6 h-6 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M4 4a2 2 0 00-2 2v8a2 2 0 002 2h10a2 2 0 002-2V4H4zm0-2h12a2 2 0 012 2v12a2 2 0 01-2 2H4a4 4 0 01-4-4V4a2 2 0 012-2z" />
+                        </svg>
+                        Course Code
+                    </h3>
+                    <p class="text-slate-300">
+                        <strong>INSQBXCC201</strong><br />
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Course Highlights -->
+    <section id="highlights" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl text-center font-bold mb-4">
+                Course <span class="text-yellow-400">Highlights</span>
+            </h2>
+            <p class=" mb-10 text-center text-gray-400 text-center">
+                Master these in-demand skills
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 ">
+                <!-- Card 1 -->
+                <div class="border border-indigo-400/50 rounded-2xl p-6 hover:border-indigo-400 transition-all">
+                    <i class="fa-solid fa-clapperboard text-indigo-400 bg-indigo-400/20 rounded p-2 mb-4"></i>
+                    <h3 class="text-lg font-bold mb-2">Short Films & Animation</h3>
+                    <p class="text-slate-400 text-sm">
+                        Create professional short films and animations using AI tools
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="border border-yellow-400/50 rounded-2xl p-6 hover:border-yellow-400 transition-all">
+                    <i class="fa-brands fa-youtube text-yellow-400 bg-yellow-400/20 rounded p-2  mb-4"></i>
+                    <h3 class="text-lg font-bold mb-2">Social Media Content</h3>
+                    <p class="text-slate-400 text-sm">
+                        Create viral reels, YouTube videos, and ads
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="border border-emerald-400/50 rounded-2xl p-6 hover:border-emerald-400 transition-all">
+                    <i class="fa-solid fa-scissors text-emerald-400 bg-emerald-400/20 rounded p-2 mb-4"></i>
+                    <h3 class="text-lg font-bold mb-2">Video Editing & Sound</h3>
+                    <p class="text-slate-400 text-sm">
+                        Professional video editing and sound recording techniques
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="border border-pink-400/50 rounded-2xl p-6 hover:border-pink-400 transition-all">
+                    <i class="fa-solid fa-palette text-pink-400 bg-pink-400/20 rounded p-2 mb-4"></i>
+                    <h3 class="text-lg font-bold mb-2">Poster & Branding</h3>
+                    <p class="text-slate-400 text-sm">
+                        Design stunning posters and branding content
+                    </p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="border border-sky-400/50 rounded-2xl p-6 hover:border-sky-400 transition-all">
+                    <i class="fa-solid fa-user-astronaut text-sky-400 bg-sky-400/20 rounded p-2 mb-4"></i>
+                    <h3 class="text-lg font-bold mb-2">Character Design</h3>
+                    <p class="text-slate-400 text-sm">
+                        Design cartoons and characters with modern design tools
+                    </p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="border border-orange-400/50 rounded-2xl p-6 hover:border-orange-400 transition-all">
+                    <i class="fa-solid fa-robot text-orange-400 bg-orange-400/20 rounded p-2 mb-4"></i>
+                    <h3 class="text-lg font-bold mb-2">AI Tools Training</h3>
+                    <p class="text-slate-400 text-sm">
+                        Master cutting-edge AI tools for content creation
+                    </p>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="border border-red-400/50 rounded-2xl p-6 hover:border-red-400 transition-all">
+                    <i class="fa-solid fa-chalkboard-user text-red-400 bg-red-400/20 rounded p-2 mb-4"></i>
+                    <h3 class="text-lg font-bold mb-2">Projects & Seminars</h3>
+                    <p class="text-slate-400 text-sm">
+                        Real-world projects and expert-led seminars
+                    </p>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="border border-purple-400/50 rounded-2xl p-6 hover:border-purple-400 transition-all">
+                    <i class="fa-solid fa-microphone text-purple-400 bg-purple-400/20 rounded p-2 mb-4"></i>
+                    <h3 class="text-lg font-bold mb-2">Scriptwriting & Voice-over</h3>
+                    <p class="text-slate-400 text-sm">
+                        Master scriptwriting and professional voice production
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Opportunities -->
+    <section id="careers" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl text-center font-bold mb-4">
+                Career <span class="text-yellow-400">Opportunities</span>
+            </h2>
+            <p class=" mb-10 text-center text-gray-400">
+                With the explosion of digital content across platforms, this course
+                opens doors to<sapn class="text-yellow-400">
+                    high-demand career paths:</sapn>
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <ul class="space-y-3 text-slate-300">
+                        <li>
+                            <i class="fa-solid fa-check text-yellow-400 bg-yellow-400/30 p-3 rounded-[5px] mr-2"></i>
+                            Digital Content Creator (YouTube, Instagram)
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check text-yellow-400 bg-yellow-400/30 p-3 rounded-[5px] mr-2"></i>
+                            Video Editor & Motion Graphics Designer
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check text-yellow-400 bg-yellow-400/30 p-3 rounded-[5px] mr-2"></i>
+                            AI-Powered Advertising Specialist
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check text-yellow-400 bg-yellow-400/30 p-3 rounded-[5px] mr-2"></i>
+                            Animation & Cartoon Designer
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check text-yellow-400 bg-yellow-400/30 p-3 rounded-[5px] mr-2"></i>
+                            Freelance Digital Media Professional
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check text-yellow-400 bg-yellow-400/30 p-3 rounded-[5px] mr-2"></i>
+                            Creative Director & Scriptwriter
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check text-yellow-400 bg-yellow-400/30 p-3 rounded-[5px] mr-2"></i>
+                            Social Media Marketing & Branding Expert
+                        </li>
+                    </ul>
+                </div>
+
+                <div
+                    class="bg-yellow-400/10 border border-yellow-500/20 hover:border-yellow-500/50 transition-all rounded-lg p-8">
+                    <h3 class="text-2xl font-bold mb-4">Additional Benefits</h3>
+                    <ul class="space-y-3 text-slate-300">
+                        <li>
+                            <i class="fa-solid fa-handshake text-yellow-400 mr-2"></i>
+                            2-Month Internship with Stipend
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-briefcase text-yellow-400 mr-2"></i> 100%
+                            Placement Assistance
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-sack-dollar text-yellow-400 mr-2"></i>
+                            Self-Employment & Earning Opportunities
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-puzzle-piece text-yellow-400 mr-2"></i>
+                            Freelance Projects
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-house-laptop text-yellow-400 mr-2"></i>
+                            Work-from-Home Career
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-rocket text-yellow-400 mr-2"></i> Own
+                            Startup / Digital Agency
+                        </li>
+                        <li>
+                            <i class="fa-brands fa-youtube text-yellow-400 mr-2"></i>
+                            YouTube & Social Media Content Creation
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <!-- Be Your Own Boss Section -->
+            <!-- <div class="card p-12 rounded-lg glow-lg text-center">
+          <h3 class="text-3xl font-bold mb-4 gradient-text">
+            ✨ Be Your Own Boss
+          </h3>
+          <p class="text-xl text-slate-300 mb-6 max-w-3xl mx-auto">
+            Start Freelancing, Build Your Brand, Earn from Anywhere! The digital
+            world is full of opportunities—and with the power of AI tools, you
+            can start earning right from your home! With the right skills, you
+            can be your own boss, earn a steady monthly income, and even scale
+            into a full-fledged creative enterprise.
+          </p>
+          <button class="btn-primary">Start Your Journey Today</button>
+        </div> -->
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+                Ready to Launch Your Digital Media Career?
+            </h2>
+            <p class="mb-8">
+                This is more than a course—it's a launchpad for your digital media
+                career. Stop dreaming. Start creating your digital future.
+            </p>
+
+            <div class="flex justify-center gap-4 animate-fade-in-up stagger-2">
+                <a href="../index.html#contact">
+                <button
+                    class="px-8 py-3 bg-yellow-500 rounded-lg font-semibold transition-transform transform hover:scale-105">
+                    Enroll Now
+                </button>
+                </a>
+                <button
+                    class="px-8 py-3 border-2 border-yellow-500 hover:bg-yellow-500/10 rounded-lg font-semibold transition-transform">
+                    Request Brochure
+                </button>
+            </div>
+            <p class="mt-8 text-gray-600">
+                Or contact us at
+                <a href="mailto:contact.qbix@gmail.com"><span class="text-yellow-500">contact.qbix@gmail.com</span></a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-yellow-500/20 pt-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2 mb-4">
+                        <img src="../assets/images/QBix_AICODINGLABS__ver_2_1-removebg-preview.png" class="w-[40%]" />
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Empowering the next generation of innovators through cutting-edge technology education and
+                        real-world
+                        innovation.
+                    </p>
+
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-white">Quick Links</h4>
+                    <ul class="space-y-3 text-gray-300 text-sm">
+                        <li>
+                            <a href="../index.html#home"
+                                class="hover:text-yellow-400 transition-colors flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 bg-yellow-400 rounded-full"></span>
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#about"
+                                class="hover:text-yellow-400 transition-colors flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 bg-yellow-400 rounded-full"></span>
+                                About
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#courses"
+                                class="hover:text-yellow-400 transition-colors flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 bg-yellow-400 rounded-full"></span>
+                                Courses
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#partners"
+                                class="hover:text-yellow-400 transition-colors flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 bg-yellow-400 rounded-full"></span>
+                                Partner Us
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-white">Partnerships</h4>
+                    <ul class="space-y-3 text-gray-300 text-sm">
+                        <li>
+                            <a href="../index.html#partners"
+                                class="hover:text-yellow-400 transition-colors flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 bg-yellow-400 rounded-full"></span>
+                                Training
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#partners"
+                                class="hover:text-yellow-400 transition-colors flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 bg-yellow-400 rounded-full"></span>
+                                Digital Media
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#partners"
+                                class="hover:text-yellow-400 transition-colors flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 bg-yellow-400 rounded-full"></span>
+                                Innovation
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-white">Get In Touch</h4>
+                    <ul class="space-y-4 text-gray-300 text-sm">
+                        <li class="flex gap-3">
+                            <svg class="w-5 h-5 text-yellow-400 flex-shrink-0 mt-0.5" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                            </svg>
+                            <a href="mailto:contact.qbix@gmail.com"><span>contact.qbix@gmail.com</span></a>
+                        </li>
+                        <li class="flex gap-3">
+                            <svg class="w-5 h-5 text-yellow-400 flex-shrink-0 mt-0.5" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path
+                                    d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773c.26.559.738 1.382 1.742 2.386 1.004 1.004 1.827 1.482 2.386 1.742l.773-1.548a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 4 14.18 4 9.5V5a1 1 0 011-1h2z">
+                                </path>
+                            </svg>
+                            <div class="flex flex-col">
+                                <a href="tel:9526775666" class="hover:text-yellow-400 transition">+91 9526 775 666</a>
+                                <a href="tel:9846 846 444" class="hover:text-yellow-400 transition">+91 9846 846 444</a>
+                            </div>
+                        </li>
+
+                        <li class="flex gap-3">
+                            <svg class="w-5 h-5 text-yellow-400 flex-shrink-0 mt-0.5" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Insight Technology, Chembra Road,
+                                Near AGENY Driving School, Perambra</span>
+                        </li>
+                    </ul>
+
+                    <div class="flex gap-3 pt-4">
+                        <a href="../index.html"
+                            class="w-10 h-10 bg-gradient-to-br from-yellow-500/30 to-yellow-600/30 rounded-lg flex items-center justify-center hover:from-yellow-500/50 hover:to-yellow-600/50 transition-all transform hover:scale-110">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M7.75 2h8.5C19.55 2 22 4.45 22 7.75v8.5C22 19.55 19.55 22 16.25 22h-8.5C4.45 22 2 19.55 2 16.25v-8.5C2 4.45 4.45 2 7.75 2zm0 2C5.68 4 4 5.68 4 7.75v8.5C4 18.32 5.68 20 7.75 20h8.5c2.07 0 3.75-1.68 3.75-3.75v-8.5C20 5.68 18.32 4 16.25 4h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm4.5-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                            </svg>
+                        </a>
+                        <a href="../index.html"
+                            class="w-10 h-10 bg-gradient-to-br from-yellow-500/30 to-yellow-600/30 rounded-lg flex items-center justify-center hover:from-yellow-500/50 hover:to-yellow-600/50 transition-all transform hover:scale-110">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.988h-2.54v-2.89h2.54V9.797c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.242 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
+                            </svg>
+                        </a>
+                        <a href="../index.html"
+                            class="w-10 h-10 bg-gradient-to-br from-yellow-500/30 to-yellow-600/30 rounded-lg flex items-center justify-center hover:from-yellow-500/50 hover:to-yellow-600/50 transition-all transform hover:scale-110">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.7-.8-2.1-.9C15.6 5 12 5 12 5h0s-3.6 0-6.9.1c-.4 0-1.3.1-2.1.9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.6c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.9.8 2.4.9 1.8.1 7.6.1 7.6.1s3.6 0 6.9-.1c.4 0 1.3-.1 2.1-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.6c0-1.6-.2-3.2-.2-3.2zM10 15V9l5 3-5 3z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="py-5 border-t border-yellow-500/20  flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-400 text-sm text-center md:text-left">
+                    &copy; 2025 QBix AI coding labs. All rights reserved.
+                </p>
+                <div class="flex gap-6 text-gray-400 text-sm">
+                    <a href="../index.html" class="hover:text-yellow-400 transition-colors">Privacy Policy</a>
+                    <a href="../index.html" class="hover:text-yellow-400 transition-colors">Terms of Service</a>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
