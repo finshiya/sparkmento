@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+         <title>SPARKMENTO AI TECH LABS - Skill to Success</title>
+        <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/favIcon.jpeg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <link href="../assets/style/style.css" rel="stylesheet" />
+</head>
+
+<body class="bg-slate-950 text-white">
+   <!-- Navigation Bar -->
+    <nav class="nav-scroll fixed w-full top-0 z-50 transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <!-- Logo -->
+          <div class="flex items-center space-x-2">
+            <a href="../index.html">
+              <img
+                src="../assets/images/logo2.png"
+                alt="SPARKMENTO Logo"
+                class="h-16 w-auto"
+              />
+            </a>
+          </div>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="../index.html#home" class="hover:text-green-400 transition">Home</a>
+            <a href="../index.html#about" class="hover:text-green-400 transition">About</a>
+            <a href="./course.html" class="hover:text-green-400 transition"
+              >Courses</a
+            >
+            <a href="../index.html#internships" class="hover:text-green-400 transition"
+              >Internships</a
+            >
+            <a href="../index.html#contact" class="hover:text-green-400 transition"
+              >Contact</a
+            >
+          </div>
+
+          <!-- Apply Button (Desktop) -->
+          <div class="hidden md:block">
+            <a href="../index.html#contact">
+              <button
+                class="btn-primary px-6 py-2 rounded-lg font-semibold text-slate-900"
+              >
+                Apply Now
+              </button>
+            </a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button
+            id="menu-btn"
+            class="md:hidden flex flex-col space-y-1 focus:outline-none"
+          >
+            <span class="w-6 h-0.5 bg-green-400"></span>
+            <span class="w-6 h-0.5 bg-green-400"></span>
+            <span class="w-6 h-0.5 bg-green-400"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-slate-900/95 backdrop-blur-md px-6 py-4 border-t border-slate-800"
+      >
+        <div class="flex flex-col space-y-4 text-lg">
+          <a href="../index.html#home" class="hover:text-green-400 transition">Home</a>
+          <a href="../index.html#about" class="hover:text-green-400 transition">About</a>
+          <a href="./course.html" class="hover:text-green-400 transition">Courses</a>
+          <a href="../index.html#internships" class="hover:text-green-400 transition"
+            >Internships</a
+          >
+          <a href="../index.html#contact" class="hover:text-green-400 transition">Contact</a>
+          <a href="../index.html#contact">
+            <button
+              class="btn-primary w-full py-2 rounded-lg font-semibold text-slate-900"
+            >
+              Apply Now
+            </button>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 animated-bg relative bg-slate-900/50">
+        <div class="max-w-6xl mx-auto text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                 AI-Powered <span class="gradient-text">Film Making</span>  & Digital Media Creations
+            </h1>
+
+            <p class="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
+                Be Your Own Boss Start Freelancing, Build Your Brand, Earn from
+                Anywhere!
+            </p>
+            <div class="flex justify-center gap-4 animate-fade-in-up stagger-2">
+              <a href="./course.html">
+            <button
+              class="btn-primary px-4 md:px-8 py-3 rounded-lg font-semibold text-slate-900"
+            >
+              Explore Courses
+            </button>
+          </a>
+          <a href="../index.html#contact">
+            <button
+              class="btn-secondary px-4 md:px-8 py-2.5 rounded-lg font-semibold"
+            >
+              Join Now
+            </button>
+          </a>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-16">
+                <div
+                    class="p-6 rounded-lg bg-slate-900/50 border border-green-500/20 hover:border-green-500/50 transition-all text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-green-400 mb-2">6</div>
+                    <p class="text-slate-400 text-sm md:text-base">Months Duration</p>
+                </div>
+
+                <div
+                    class="p-6 rounded-lg bg-slate-900/50 border border-green-500/20 hover:border-green-500/50 transition-all text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-green-400 mb-2">6+</div>
+                    <p class="text-slate-400 text-sm md:text-base">Real Projects</p>
+                </div>
+
+                <div
+                    class="p-6 rounded-lg bg-slate-900/50 border border-green-500/20 hover:border-green-500/50 transition-all text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-green-400 mb-2">100%</div>
+                    <p class="text-slate-400 text-sm md:text-base">Practical Learning</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Course Overview -->
+    <section id="course" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl text-center font-bold mb-4">
+                What You'll <span class="text-green-400">Learn</span>
+            </h2>
+            <p class=" mb-10 text-center text-gray-400">
+                Integrating Artificial Intelligence with Modern Film and Digital Media Production
+            </p>
+
+            <div
+                class="grid grid-cols-1 md:grid-cols-10 items-center bg-slate-900/50 border border-green-500/20 hover:border-green-500/50 transition-all rounded-lg p-6 mb-6">
+                <div class="md:col-span-3 mb-6 md:mb-0 h-[200px]">
+                    <img src="../assets/images/AI-Powered-Filmmaking.png" alt="AI Digital Media"
+                        class="rounded-lg shadow-lg w-[100%] h-[100%] object-cover" />
+                </div>
+
+                <div class="md:col-span-7 md:pl-6">
+                    <p class="text-lg text-slate-300 leading-relaxed mb-4">
+                     The<span class="text-green-400"> AI-Powered Film Making & Digital Media Creations</span> course is a six-month professional training program designed to prepare students, content creators, and media enthusiasts for the next generation of film and digital content production.
+                    </p>
+
+                    <p class="text-lg text-slate-300 leading-relaxed  mb-4">
+                        This program blends <span class="text-green-400">traditional filmmaking techniques</span> with the latest <span class="text-green-400">AI-driven creative tools,</span> offering a unique opportunity to learn storytelling, cinematography, editing, VFX, and sound design — all enhanced through Artificial Intelligence.
+                    </p>
+                    <p class="text-lg text-slate-300 leading-relaxed  mb-4">
+                       Students will explore tools such as <span class="text-green-400">RunwayML, Pika Labs, Veo, Midjourney, ElevenLabs, DaVinci Resolve, Blender, and Unreal Engine</span>, gaining hands-on experience in every stage of production — from idea development to final distribution.
+                    </p>
+                    <p class="text-lg text-slate-300 leading-relaxed">
+                     By the end of the course, participants will produce a complete <span class="text-green-400">AI-powered short film</span>, build a professional digital portfolio, and become industry-ready for careers in film, digital media, and AI content creation.
+                    </p>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6 text-white">
+                <!-- Duration & Schedule -->
+                <div class="highlight-item p-6 rounded-lg">
+                    <h3 class="flex items-center text-xl font-bold text-green-400 mb-3 gap-2">
+                        <svg class="w-6 h-6 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-8V6a.75.75 0 00-1.5 0v4.25c0 .2.08.39.22.53l2.5 2.5a.75.75 0 101.06-1.06L10.75 10z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        Duration & Schedule
+                    </h3>
+                    <p class="text-slate-300">
+                        <strong>6 Months</strong> | 5 Days/Week | 3 Hours/Day<br />
+                        <span class="text-sm text-slate-400">80% minimum attendance required</span>
+                    </p>
+                </div>
+
+                <!-- Learning Mode -->
+                <div class="highlight-item p-6 rounded-lg">
+                    <h3 class="flex items-center text-xl font-bold text-green-400 mb-3 gap-2">
+                        <svg class="w-6 h-6 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M3 5a2 2 0 012-2h10a2 2 0 012 2v7H3V5zm14 9H3a2 2 0 00-2 2v1h18v-1a2 2 0 00-2-2z" />
+                        </svg>
+                        Learning Mode
+                    </h3>
+                    <p class="text-slate-300">
+                        <strong>Online & Offline</strong><br />
+                         <span class="text-sm text-slate-400"> Choose the mode that fits your schedule and learning style</span>
+                       
+                    </p>
+                </div>
+
+                <!-- Course Code -->
+                <div class="highlight-item p-6 rounded-lg">
+                    <h3 class="flex items-center text-xl font-bold text-green-400 mb-3 gap-2">
+                        <svg class="w-6 h-6 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M4 4a2 2 0 00-2 2v8a2 2 0 002 2h10a2 2 0 002-2V4H4zm0-2h12a2 2 0 012 2v12a2 2 0 01-2 2H4a4 4 0 01-4-4V4a2 2 0 012-2z" />
+                        </svg>
+                        Course Code
+                    </h3>
+                    <p class="text-slate-300">
+                        <strong>INSQBXDC300</strong><br />
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Course Highlights -->
+  <section id="highlights" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/50">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl text-center font-bold mb-4">
+      Course <span class="text-green-400">Highlights</span>
+    </h2>
+    <p class="mb-10 text-center text-gray-400">
+      Master these in-demand creative and AI skills
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <!-- 1. Complete Film Education -->
+      <div class="border border-indigo-400/50 rounded-2xl p-6 hover:border-indigo-400 transition-all">
+        <i class="fa-solid fa-film text-indigo-400 bg-indigo-400/20 rounded p-3 mb-4"></i>
+        <h3 class="text-lg font-bold mb-2">Complete Film Education</h3>
+        <p class="text-slate-400 text-sm">
+          Covers pre-production, production, and post-production with AI integration.
+        </p>
+      </div>
+
+      <!-- 2. AI-Powered Creative Tools -->
+      <div class="border border-orange-400/50 rounded-2xl p-6 hover:border-orange-400 transition-all">
+        <i class="fa-solid fa-robot text-orange-400 bg-orange-400/20 rounded p-3 mb-4"></i>
+        <h3 class="text-lg font-bold mb-2">AI-Powered Creative Tools</h3>
+        <p class="text-slate-400 text-sm">
+          Learn cutting-edge platforms for video, script, and sound creation.
+        </p>
+      </div>
+
+      <!-- 3. Hands-On Projects -->
+      <div class="border border-emerald-400/50 rounded-2xl p-6 hover:border-emerald-400 transition-all">
+        <i class="fa-solid fa-wand-magic-sparkles text-emerald-400 bg-emerald-400/20 rounded p-3 mb-4"></i>
+        <h3 class="text-lg font-bold mb-2">Hands-On Projects</h3>
+        <p class="text-slate-400 text-sm">
+          Every module includes real-time projects and practical labs.
+        </p>
+      </div>
+
+      <!-- 4. Virtual Production & VFX -->
+      <div class="border border-pink-400/50 rounded-2xl p-6 hover:border-pink-400 transition-all">
+        <i class="fa-solid fa-vr-cardboard text-pink-400 bg-pink-400/20 rounded p-3 mb-4"></i>
+        <h3 class="text-lg font-bold mb-2">Virtual Production & VFX</h3>
+        <p class="text-slate-400 text-sm">
+          Train on AI-assisted 3D environments and visual effects creation.
+        </p>
+      </div>
+
+      <!-- 5. Cinematic Audio Design -->
+      <div class="border border-purple-400/50 rounded-2xl p-6 hover:border-purple-400 transition-all">
+        <i class="fa-solid fa-headphones text-purple-400 bg-purple-400/20 rounded p-3 mb-4"></i>
+        <h3 class="text-lg font-bold mb-2">Cinematic Audio Design</h3>
+        <p class="text-slate-400 text-sm">
+          Learn AI voice creation, dubbing, and cinematic background scoring.
+        </p>
+      </div>
+
+      <!-- 6. Portfolio & Showreel -->
+      <div class="border border-sky-400/50 rounded-2xl p-6 hover:border-sky-400 transition-all">
+        <i class="fa-solid fa-folder-open text-sky-400 bg-sky-400/20 rounded p-3 mb-4"></i>
+        <h3 class="text-lg font-bold mb-2">Portfolio & Showreel</h3>
+        <p class="text-slate-400 text-sm">
+          Develop a creative portfolio and professional showreel for freelancing or placement.
+        </p>
+      </div>
+
+      <!-- 7. Industry-Oriented Learning -->
+      <div class="border border-green-400/50 rounded-2xl p-6 hover:border-green-400 transition-all">
+        <i class="fa-solid fa-lightbulb text-green-400 bg-green-400/20 rounded p-3 mb-4"></i>
+        <h3 class="text-lg font-bold mb-2">Industry-Oriented Learning</h3>
+        <p class="text-slate-400 text-sm">
+          Tailored for film, media, and digital marketing professionals.
+        </p>
+      </div>
+
+      <!-- 8. Career Guidance -->
+      <div class="border border-red-400/50 rounded-2xl p-6 hover:border-red-400 transition-all">
+        <i class="fa-solid fa-briefcase text-red-400 bg-red-400/20 rounded p-3 mb-4"></i>
+        <h3 class="text-lg font-bold mb-2">Career Guidance</h3>
+        <p class="text-slate-400 text-sm">
+          Learn about freelance setup, monetization, and personal branding.
+        </p>
+      </div>
+
+      <!-- 9. Certification -->
+      <div class="border border-green-400/50 rounded-2xl p-6 hover:border-green-400 transition-all">
+        <i class="fa-solid fa-certificate text-green-400 bg-green-400/20 rounded p-3 mb-4"></i>
+        <h3 class="text-lg font-bold mb-2">Certification</h3>
+        <p class="text-slate-400 text-sm">
+          Receive an institute-recognized certificate upon successful completion.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Career Opportunities -->
+<section id="careers" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/50">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl text-center font-bold mb-4">
+      Career <span class="text-green-400">Opportunities</span>
+    </h2>
+    <p class="mb-10 text-center text-gray-400">
+      After successful completion, learners can pursue roles across film, media, and digital industries.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Left Column -->
+          <div>
+                    <ul class="space-y-4 text-slate-300">
+
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-video text-green-400 bg-green-400/30 p-3 rounded-[5px]"></i>
+                            <span>
+                                <span class="font-semibold text-green-400">Film & Media Production</span> — AI
+                                Filmmaker, Digital Director, Assistant Director, Cinematographer, Drone Videographer,
+                                Virtual Production Artist
+                            </span>
+                        </li>
+
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-computer text-green-400 bg-green-400/30 p-3 rounded-[5px]"></i>
+                            <span>
+                                <span class="font-semibold text-green-400">Post-Production & VFX</span> — AI Video
+                                Editor, Motion Graphics Designer, AI Visual Creator, Compositing Artist, Sound Engineer,
+                                Voice Artist
+                            </span>
+                        </li>
+
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-mobile-screen text-green-400 bg-green-400/30 p-3 rounded-[5px]"></i>
+                            <span>
+                                <span class="font-semibold text-green-400">Digital Media & Content Creation</span> —
+                                Social Media Video Producer, YouTube & Reels Creator, AI Content Strategist, Digital
+                                Campaign Designer
+                            </span>
+                        </li>
+
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-palette text-green-400 bg-green-400/30 p-3 rounded-[5px]"></i>
+                            <span>
+                                <span class="font-semibold text-green-400">Freelance & Education</span> — Freelance AI
+                                Media Artist, Creative Technologist, Digital Media Trainer
+                            </span>
+                        </li>
+
+                    </ul>
+                </div>
+
+      <!-- Right Column -->
+      <div class="bg-green-400/10 border border-green-500/20 hover:border-green-500/50 transition-all rounded-lg p-8">
+        <h3 class="text-2xl font-bold mb-4 text-green-400">🏆 Course Outcomes</h3>
+        <ul class="space-y-3 text-slate-300">
+          <li>
+            <i class="fa-solid fa-wand-magic-sparkles text-green-400 mr-2"></i>
+            Master AI tools for end-to-end film production
+          </li>
+          <li>
+            <i class="fa-solid fa-film text-green-400 mr-2"></i>
+            Create cinematic AI-powered short films
+          </li>
+          <li>
+            <i class="fa-solid fa-id-card text-green-400 mr-2"></i>
+            Build a professional creative portfolio & personal brand
+          </li>
+          <li>
+            <i class="fa-solid fa-scale-balanced text-green-400 mr-2"></i>
+            Understand AI ethics, copyright & creative integrity
+          </li>
+          <li>
+            <i class="fa-solid fa-briefcase text-green-400 mr-2"></i>
+            Be job-ready for the film, OTT, media & advertising industries
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+    <!-- CTA Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+                Ready to Launch Your AI Powered Film Making Career?
+            </h2>
+            <p class="mb-8">
+                This is more than a course—it's a launchpad for your AI Powered Film Making. Stop dreaming. Start creating your digital future.
+            </p>
+
+            <div class="flex justify-center gap-4 animate-fade-in-up stagger-2">
+                <a href="../index.html#contact">
+            <button
+              class="btn-primary px-4 md:px-8 py-3 rounded-lg font-semibold text-slate-900"
+            >
+              Enroll Now
+            </button>
+          </a>
+          <a href="../index.html#contact">
+            <button
+              class="btn-secondary px-4 md:px-8 py-2.5 rounded-lg font-semibold"
+            >
+              Request Brochure
+            </button>
+          </a>
+            </div>
+            <p class="mt-8 text-gray-600">
+                Or contact us at
+                <a href="mailto:sparkmento.info@gmail.com"><span class="text-green-500">sparkmento.info@gmail.com</span></a>
+            </p>
+        </div>
+    </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 pt-16 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-green-500/5 to-transparent pointer-events-none"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-12 mb-12">
+
+        <div>
+          <img src="../assets/images/logo2.png" alt="SPARKMENTO Logo" class="w-[45%] mb-4 opacity-90" />
+          <p class="text-gray-400 leading-relaxed text-sm">
+            A division of Spark Learnings, pioneering AI and IT training in Kerala with world-class programs.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="font-bold text-green-400 text-lg mb-5">Quick Links</h4>
+          <ul class="space-y-3 text-gray-300 text-sm">
+            <li>
+              <a href="course.html" class=" group flex items-center gap-2 hover:text-green-400 transition">
+                <i class="fa-solid fa-angle-right text-green-500 text-xs group-hover:translate-x-1 transition"></i>
+                Courses
+              </a>
+            </li>
+            <li>
+              <a href="../index.html#internships" class=" group flex items-center gap-2 hover:text-green-400 transition">
+                <i class="fa-solid fa-angle-right text-green-500 text-xs group-hover:translate-x-1 transition"></i>
+                Internships
+              </a>
+            </li>
+            <li>
+              <a href="../index.html#contact" class=" group flex items-center gap-2 hover:text-green-400 transition">
+                <i class="fa-solid fa-angle-right text-green-500 text-xs group-hover:translate-x-1 transition"></i>
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Resources -->
+        <div>
+          <h4 class="font-bold text-green-400 text-lg mb-5">Resources</h4>
+          <ul class="space-y-3 text-gray-300 text-sm">
+            <li>
+              <a href="#" class="group flex items-center gap-2 hover:text-green-400 transition">
+                <i class="fa-solid fa-angle-right text-green-500 text-xs group-hover:translate-x-1 transition"></i>
+                Brochure
+              </a>
+            </li>
+            <li>
+              <a href="#" class="group flex items-center gap-2 hover:text-green-400 transition">
+                <i class="fa-solid fa-angle-right text-green-500 text-xs group-hover:translate-x-1 transition"></i>
+                FAQs
+              </a>
+            </li>
+            <li>
+              <a href="#" class="group flex items-center gap-2 hover:text-green-400 transition">
+                <i class="fa-solid fa-angle-right text-green-500 text-xs group-hover:translate-x-1 transition"></i>
+                Franchise Info
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-green-400 text-lg mb-5">Connect</h4>
+          <p class="text-gray-400 text-sm mb-4">Follow us on social media</p>
+
+          <div class="flex gap-4">
+            <a href="#"
+              class="w-10 h-10 bg-green-600/20 border border-green-500/20 rounded-xl flex items-center justify-center hover:bg-green-600 hover:shadow-green-500/30 hover:shadow-lg transition">
+              <i class="fa-brands fa-facebook-f text-white"></i>
+            </a>
+
+            <a href="#"
+              class="w-10 h-10 bg-pink-600/20 border border-pink-500/20 rounded-xl flex items-center justify-center hover:bg-pink-600 hover:shadow-pink-500/30 hover:shadow-lg transition">
+              <i class="fa-brands fa-instagram text-white"></i>
+            </a>
+
+            <a href="#"
+              class="w-10 h-10 bg-red-600/20 border border-red-500/20 rounded-xl flex items-center justify-center hover:bg-red-600 hover:shadow-red-500/30 hover:shadow-lg transition">
+              <i class="fa-brands fa-youtube text-white"></i>
+            </a>
+
+            <a href="#"
+              class="w-10 h-10 bg-blue-600/20 border border-blue-500/20 rounded-xl flex items-center justify-center hover:bg-blue-600 hover:shadow-blue-500/30 hover:shadow-lg transition">
+              <i class="fa-brands fa-linkedin-in text-white"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-slate-800 py-5 text-center text-gray-400 text-sm">
+        <p>© 2025 SPARKMENTO AI TECH LABS — Skill to Success</p>
+        <p class="mt-1">A Division of Spark Learnings | Trivandrum, Kerala</p>
+      </div>
+    </div>
+  </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

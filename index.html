@@ -9,157 +9,36 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      scroll-behavior: smooth;
-    }
-
-    /* Hero background gradient */
-    .hero-gradient {
-      background: linear-gradient(135deg, #0f172a 0%, #181c26 50%, #0f172a 100%);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .text-slate-900 {
-      color: #ffffff !important;
-    }
-
-    /* Floating light overlay */
-    .hero-gradient::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: radial-gradient(circle at 20% 50%,
-          rgba(59, 130, 246, 0.1) 0%,
-          transparent 50%),
-        radial-gradient(circle at 80% 80%,
-          rgba(251, 191, 36, 0.1) 0%,
-          transparent 50%);
-      animation: float 6s ease-in-out infinite;
-      z-index: 1;
-    }
-
-    /* Glitter effect overlay */
-    .glitter {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: radial-gradient(2px 2px at 20% 30%,
-          rgba(255, 215, 0, 0.8),
-          transparent),
-        radial-gradient(1.5px 1.5px at 60% 70%,
-          rgba(173, 216, 230, 0.8),
-          transparent),
-        radial-gradient(2px 2px at 80% 20%,
-          rgba(255, 223, 0, 0.7),
-          transparent),
-        radial-gradient(1.5px 1.5px at 30% 80%,
-          rgba(255, 255, 255, 0.5),
-          transparent);
-      background-repeat: repeat;
-      background-size: 400px 400px;
-      animation: sparkle 8s infinite linear;
-      pointer-events: none;
-      z-index: 2;
-    }
-
-    @keyframes sparkle {
-      0% {
-        background-position: 0 0, 50px 50px, 100px 100px, 150px 150px;
-      }
-
-      100% {
-        background-position: 400px 400px, 450px 450px, 500px 500px,
-          550px 550px;
-      }
-    }
-
-    @keyframes float {
-
-      0%,
-      100% {
-        transform: translateY(0px);
-      }
-
-      50% {
-        transform: translateY(20px);
-      }
-    }
-
-    .nav-scroll {
-      transition: all 0.3s ease;
-    }
-
-    .nav-scroll.scrolled {
-      background: rgba(15, 23, 42, 0.95);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .btn-primary {
-      background: linear-gradient(90deg, #00C853 0%, #009624 100%);
-      transition: all 0.3s ease;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 20px rgb(2 209 98 / 32%);
-    }
-
-    .btn-secondary {
-      border: 2px solid #01d160;
-      color: #01d160;
-      transition: all 0.3s ease;
-    }
-
-    .btn-secondary:hover {
-      background: #01d160;
-      color: #0f172a;
-    }
-  </style>
+  <link rel="stylesheet" href="./assets/style/style.css" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./assets/images/favIcon.jpeg" />
 </head>
 
 <body class="bg-slate-950 text-white">
   <!-- Navigation Bar -->
-  <nav class="nav-scroll fixed w-full top-0 z-50 transition-all duration-300">
+  <nav class="nav-scroll fixed w-full top-0 z-50 transition-all duration-300 ">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-20">
-        <!-- Logo -->
         <div class="flex items-center space-x-2">
-          <img src="./assets/images/logo2.png" alt="SPARKMENTO Logo" class="h-16 w-auto " />
+          <a href="index.html">
+            <img src="./assets/images/logo2.png" alt="SPARKMENTO Logo" class=" w-[25%]" />
+          </a>
         </div>
 
-        <!-- Desktop Menu -->
         <div class="hidden md:flex items-center space-x-8">
-          <a href="#home" class="hover:text-green-400 transition">Home</a>
+          <a href="./index.html" class="hover:text-green-400 transition">Home</a>
           <a href="#about" class="hover:text-green-400 transition">About</a>
-          <a href="#courses" class="hover:text-green-400 transition">Courses</a>
+          <a href="./courses/course.html" class="hover:text-green-400 transition">Courses</a>
           <a href="#internships" class="hover:text-green-400 transition">Internships</a>
           <a href="#contact" class="hover:text-green-400 transition">Contact</a>
         </div>
 
-        <!-- Apply Button (Desktop) -->
         <div class="hidden md:block">
-          <button class="btn-primary px-6 py-2 rounded-lg font-semibold text-slate-900">
-            Apply Now
-          </button>
+          <a href="#contact">
+            <button class="btn-primary px-6 py-2 rounded-lg font-semibold text-slate-900">
+              Apply Now
+            </button>
+          </a>
         </div>
 
         <!-- Mobile Menu Button -->
@@ -174,77 +53,105 @@
     <!-- Mobile Dropdown Menu -->
     <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95 backdrop-blur-md px-6 py-4 border-t border-slate-800">
       <div class="flex flex-col space-y-4 text-lg">
-        <a href="#home" class="hover:text-green-400 transition">Home</a>
+        <a href="./index.html" class="hover:text-green-400 transition">Home</a>
         <a href="#about" class="hover:text-green-400 transition">About</a>
-        <a href="#courses" class="hover:text-green-400 transition">Courses</a>
+        <a href="./courses/course.html" class="hover:text-green-400 transition">Courses</a>
         <a href="#internships" class="hover:text-green-400 transition">Internships</a>
         <a href="#contact" class="hover:text-green-400 transition">Contact</a>
-        <button class="btn-primary w-full py-2 rounded-lg font-semibold text-slate-900">
-          Apply Now
-        </button>
+        <a href="#contact">
+          <button class="btn-primary w-full py-2 rounded-lg font-semibold text-slate-900">
+            Apply Now
+          </button>
+        </a>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero-gradient h-screen flex items-center relative">
-    <!-- Glitter overlay -->
-    <div class="glitter"></div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <!-- Left Content -->
-        <div class="space-y-6">
-          <h1 class="text-4xl md:text-6xl font-bold leading-tight">
-            <span>Skill</span> to
-            <span class="text-green-600">Success</span>
-          </h1>
-          <p class="text-xl text-gray-300">
-            Empowering Learners through Technology, Innovation & Mentorship
-          </p>
-          <p class="text-lg text-green-400 font-semibold">
-            Learn. Build. Innovate. Succeed.
-          </p>
-          <div class="flex gap-4 pt-4">
+<!-- Hero Section -->
+<section id="home" class="hero-gradient h-screen flex items-center relative overflow-hidden">
+
+  <!-- Glitter Effect (kept as it is) -->
+  <div class="glitter absolute inset-0 z-10 pointer-events-none"></div>
+
+  <!-- Mobile Background Video -->
+  <video 
+    class="md:hidden absolute inset-0 w-full h-full object-cover opacity-40 z-0"
+    autoplay muted loop playsinline>
+    <source src="./assets/images/hero-video.mp4" type="video/mp4" />
+  </video>
+
+  <!-- Dark overlay for readability -->
+  <div class="md:hidden absolute inset-0 bg-black/50 z-0"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      
+      <!-- Left Content -->
+      <div class="space-y-6">
+        <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+          <span>Skill</span> to
+          <span class="text-green-600">Success</span>
+        </h1>
+        <p class="text-xl text-gray-300">
+          Empowering Learners through Technology, Innovation & Mentorship
+        </p>
+        <p class="text-lg text-green-400 font-semibold">
+          Learn. Build. Innovate. Succeed.
+        </p>
+        <div class="flex gap-4 pt-4">
+          <a href="./courses/course.html">
             <button class="btn-primary px-4 md:px-8 py-3 rounded-lg font-semibold text-slate-900">
               Explore Courses
             </button>
-            <button class="btn-secondary px-4 md:px-8 py-3 rounded-lg font-semibold">
+          </a>
+          <a href="#contact">
+            <button class="btn-secondary px-4 md:px-8 py-2.5 rounded-lg font-semibold">
               Join Now
             </button>
-          </div>
+          </a>
         </div>
+      </div>
 
-        <!-- Right Visual -->
-        <div class="hidden md:flex justify-center relative mt-20">
-          <div class="relative w-[100%]">
-            <div
-              class="absolute inset-0 bg-gradient-to-br from-green-500 to-green-400 rounded-[50px] opacity-20 blur-3xl animate-pulse">
+      <!-- Right Side Video (DESKTOP ONLY) -->
+      <div class="hidden md:flex justify-center relative mt-10">
+        <div class="relative w-[120%] h-[420px] flex items-center justify-center">
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-green-500 to-green-300 opacity-30 blur-[100px] animate-pulse rounded-[40px]">
+          </div>
+          <div
+            class="relative backdrop-blur-xl bg-white/10 border border-white/20 shadow-2xl p-4 rounded-3xl w-[90%] h-[100%] flex items-center justify-center">
+
+            <div class="relative w-full h-full">
+              <video id="heroVideo" autoplay loop muted playsinline
+                class="w-full h-full rounded-2xl object-cover mix-blend-screen cursor-pointer">
+                <source src="./assets/images/hero-video.mp4" type="video/mp4">
+              </video>
             </div>
-            <img src="./assets/images/Gemini_Generated_Image_ndhbbzndhbbzndhb-removebg-preview.png"
-              class="relative z-10 w-[80%] object-cover" alt="Hero Visual" />
+
           </div>
         </div>
       </div>
+
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- About Section -->
   <section id="about" class="py-20 bg-slate-900">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-2 gap-12 items-center">
-        <!-- Image -->
         <div class="bg-gradient-to-br from-green-500 to-green-400 rounded-lg p-1">
           <div class="bg-slate-800 rounded-lg h-96 flex items-center justify-center">
-            <img src="./assets/images/Gemini_Generated_Image_g73il1g73il1g73i.png"
-              class="w-[100%] h-[100%] object-cover" />
+            <img src="./assets/images/about.png" class="w-[100%] h-[100%] object-cover" />
           </div>
         </div>
 
-        <!-- Content -->
         <div class="space-y-6">
           <h2 class="text-4xl font-bold">
-            Welcome to<br> <span class="text-green-500">SPARKMENTO AI TECH LABS</span>
+            Welcome to<br />
+            <span class="text-green-500">SPARKMENTO AI TECH LABS</span>
           </h2>
           <p class="text-gray-300 leading-relaxed">
             A proud division of SPARK LEARNINGS, a pioneer PSC & academic
@@ -258,11 +165,36 @@
             academic excellence with industry exposure — helping students
             master the technologies that shape the future.
           </p>
-          <button class="btn-primary px-8 py-3 rounded-lg font-semibold text-slate-900 mt-4">
-            → Know More About Us
-          </button>
+          <a href="./index.html">
+            <button class="btn-primary px-8 py-3 rounded-lg font-semibold text-slate-900 mt-4">
+              Know More About Us
+            </button>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="mt-10 feature-card bg-slate-800 rounded-lg p-8 border border-green-500 border-opacity-20">
+        <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
+
+          <img src="./assets/images/logo_Qbix.png"
+            class="w-32 h-auto opacity-80 hover:opacity-100 transition md:w-40" />
+
+          <div class="flex-1 border-l-2 border-green-500 pl-4 text-slate-300">
+            <p class="italic">
+              SPARKMENTO AI TECH LABS collaborates with Insight Technology and its creative division
+              QBix AI Coding Labs to deliver cutting-edge AI, Fullstack and Future Tech training.
+              Through its innovation wing, QBix AI Coding Labs, Insight delivers advanced AI-powered
+              courses and project-based learning to SPARKMENTO students, ensuring practical, creative,
+              and career-driven education for the future.
+              Official training collaboration with Insight Technology & QBix — bridging creativity,
+              coding, and AI innovation.
+            </p>
+          </div>
+
         </div>
       </div>
+
     </div>
   </section>
 
@@ -270,149 +202,281 @@
   <section id="courses" class="py-20 bg-slate-950">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold mb-4">Top Career-Oriented Programs</h2>
+        <h2 class="text-4xl font-bold mb-4">Top Career Oriented Programs</h2>
         <p class="text-gray-400 text-lg">
           Master the skills that shape tomorrow's technology
         </p>
       </div>
 
       <div class="grid md:grid-cols-4 gap-6">
-        <!-- Course Card 1 -->
-        <div class="course-card bg-slate-900 rounded-lg p-6 hover:bg-slate-800">
-          <div class="text-4xl mb-4">
-            <img src="./assets/images/MachineLearning.png" />
-          </div>
-          <h3 class="text-xl font-bold mb-2">Generative AI & Prompt Engineering</h3>
-          <p class="text-gray-400 text-sm mb-4">
-          Master AI prompts to generate content quickly and efficiently.
-          </p>
-          <button class="text-green-400 font-semibold hover:text-green-300">
-            View Details →
-          </button>
-        </div>
-
-        <!-- Course Card 2 -->
-        <div class="course-card bg-slate-900 rounded-lg p-6 hover:bg-slate-800">
-          <div class="text-4xl mb-4">
-            <img src="./assets/images/webdevelopment.jpg" />
-          </div>
-          <h3 class="text-xl font-bold mb-2">Full Stack Development</h3>
-          <p class="text-gray-400 text-sm mb-4">
-          Learn MERN stack, Python, and build professional projects.
-          </p>
-          <button class="text-green-400 font-semibold hover:text-green-300">
-            View Details →
-          </button>
-        </div>
-
-        <!-- Course Card 3 -->
-        <div class="course-card bg-slate-900 rounded-lg p-6 hover:bg-slate-800">
-          <div class="text-4xl mb-4">
-            <img src="./assets/images/appDevelopment (2).jpg" />
-          </div>
-          <h3 class="text-xl font-bold mb-2">Digital Media Creations</h3>
-          <p class="text-gray-400 text-sm mb-4">
-            Learn to create stunning digital content using AI tools.
-          </p>
-          <button class="text-green-400 font-semibold hover:text-green-300">
-            View Details →
-          </button>
-        </div>
-
-        <!-- Course Card 4 -->
-        <div class="course-card bg-slate-900 rounded-lg p-6 hover:bg-slate-800">
-          <div class="text-4xl mb-4">
-            <img src="./assets/images/iot.jpg" />
-          </div>
+        <div class="course-card bg-slate-900 rounded-lg p-6 hover:bg-slate-800 flex flex-col h-full">
+          <img src="./assets/images/AI-Powered-Filmmaking.png" class="h-[200px] w-full object-cover mb-4" />
           <h3 class="text-xl font-bold mb-2">AI Powered Filmmaking</h3>
-          <p class="text-gray-400 text-sm mb-4">
-           Master AI tools for creating short films and video content.
+          <p class="text-gray-400 text-sm mb-4 flex-grow">
+            Master AI tools for creating short films and professional video content.
           </p>
-          <button class="text-green-400 font-semibold hover:text-green-300">
-            View Details →
-          </button>
+
+          <div class="flex justify-between text-gray-300 text-sm mb-4">
+            <p class="flex items-center gap-2"><i class="fa-solid fa-graduation-cap text-green-400"></i>
+              Online / Offline</p>
+            <p class="flex items-center gap-2"><i class="fa-regular fa-clock text-green-400"></i> 6 Months
+            </p>
+          </div>
+          <a href="./courses/AI-powered-filmmaking.html" class="mt-auto ">
+            <button class="btn-primary px-6 py-2 rounded-lg font-semibold text-slate-900 w-full">
+              View More
+            </button>
+          </a>
         </div>
+
+        <div class="course-card bg-slate-900 rounded-lg p-6 hover:bg-slate-800 flex flex-col h-full">
+          <img src="./assets/images/appDevelopment (2).jpg" class="h-[200px] w-full object-cover mb-4" />
+          <h3 class="text-xl font-bold mb-2">Digital Media Creations</h3>
+          <p class="text-gray-400 text-sm mb-4 flex-grow">
+            Learn to design and create high-impact digital content using AI.
+          </p>
+
+          <div class="flex justify-between text-gray-300 text-sm mb-4">
+            <p class="flex items-center gap-2"><i class="fa-solid fa-graduation-cap text-green-400"></i>
+              Online / Offline</p>
+            <p class="flex items-center gap-2"><i class="fa-regular fa-clock text-green-400"></i> 4 Months
+            </p>
+          </div>
+
+          <a href="./courses/digital-media-course.html" class="mt-auto">
+            <button class="btn-primary px-6 py-2 rounded-lg font-semibold text-slate-900 w-full">
+              View More
+            </button>
+          </a>
+        </div>
+
+        <div class="course-card bg-slate-900 rounded-lg p-6 hover:bg-slate-800 flex flex-col h-full">
+          <img src="./assets/images/MachineLearning.png" class="h-[200px] w-full object-cover mb-4" />
+          <h3 class="text-xl font-bold mb-2">Generative AI & Prompt Engineering</h3>
+          <p class="text-gray-400 text-sm mb-4 flex-grow">
+            Master prompt patterns and AI-based content automation workflows.
+          </p>
+
+          <div class="flex justify-between text-gray-300 text-sm mb-4">
+            <p class="flex items-center gap-2"><i class="fa-solid fa-graduation-cap text-green-400"></i>
+              Online / Offline</p>
+            <p class="flex items-center gap-2"><i class="fa-regular fa-clock text-green-400"></i> 4 Months
+            </p>
+          </div>
+
+          <a href="./courses/GenerativeAI-PromptEngineering.html" class="mt-auto">
+            <button class="btn-primary px-6 py-2 rounded-lg font-semibold text-slate-900 w-full">
+              View More
+            </button>
+          </a>
+        </div>
+
+        <div class="course-card bg-slate-900 rounded-lg p-6 hover:bg-slate-800 flex flex-col h-full">
+          <img src="./assets/images/webdevelopment.jpg" class="h-[200px] w-full object-cover mb-4" />
+          <h3 class="text-xl font-bold mb-2">Full Stack Development</h3>
+          <p class="text-gray-400 text-sm mb-4 flex-grow">
+            Build complete web apps using MERN, APIs, and deployment workflows.
+          </p>
+
+          <div class="flex justify-between text-gray-300 text-sm mb-4">
+            <p class="flex items-center gap-2"><i class="fa-solid fa-graduation-cap text-green-400"></i>
+              Online / Offline</p>
+            <p class="flex items-center gap-2"><i class="fa-regular fa-clock text-green-400"></i> 4 Months
+            </p>
+          </div>
+
+          <a href="./courses/fullStack-Development.html" class="mt-auto">
+            <button class="btn-primary px-6 py-2 rounded-lg font-semibold text-slate-900 w-full">
+              View More
+            </button>
+          </a>
+        </div>
+      </div>
+
+      <div class="text-center mt-10">
+        <a href="./courses/course.html">
+          <button class="btn-primary px-6 py-3 rounded-lg font-semibold text-slate-900">
+            Explore More Courses
+          </button>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Why Choose Us -->
+  <!-- Feature section  -->
   <section class="py-20 bg-slate-900">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
       <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold mb-4">Why Choose <span class="text-green-500">SPARKMENTO </span>?</h2>
+        <h2 class="text-4xl font-bold mb-4">More Than Just Courses</h2>
         <p class="text-gray-400 text-lg">
-          We blend academic excellence with industry exposure helping
-          students master the technologies that shape the future.
+          Exclusive programs designed to boost your skills, confidence, and career readiness.
         </p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- Feature 1 -->
-        <div class="feature-card bg-slate-800 rounded-lg p-8 border border-green-500 border-opacity-20 text-center">
-          <div class="flex justify-center mb-4">
-            <i data-lucide="users" class="w-10 h-10 text-green-400 bg-green-500/20 p-2 rounded-[10px]"></i>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+        <!-- Card 1 -->
+        <div
+          class="flex flex-col md:flex-row bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-green-500/30 transition group">
+          <div class="w-full md:w-[200px] h-[150px] flex-shrink-0">
+            <img src="./assets/images/feat-1.jpg"
+              class="h-full w-full object-cover group-hover:scale-110 transition duration-500" />
           </div>
-          <h3 class="text-xl font-bold mb-3">Expert Mentors</h3>
-          <p class="text-gray-400">
-            Learn from industry professionals with years of experience
+          <div class="p-6 space-y-3">
+            <h3 class="text-2xl font-semibold">Workshops & Bootcamps</h3>
+            <p class="text-gray-300">
+              Hands-on sessions with industry experts to help students build real-world project experience.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="flex flex-col md:flex-row bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-green-500/30 transition group">
+          <div class="w-full md:w-[200px] h-[150px] flex-shrink-0">
+            <img src="./assets/images/feat-2.avif"
+              class="h-full w-full object-cover group-hover:scale-110 transition duration-500" />
+          </div>
+          <div class="p-6 space-y-3">
+            <h3 class="text-2xl font-semibold">Career English Training</h3>
+            <p class="text-gray-300">
+              Improve communication, presentation and professional English for top IT placements.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="flex flex-col md:flex-row bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-green-500/30 transition group">
+          <div class="w-full md:w-[200px] h-[150px] flex-shrink-0">
+            <img src="./assets/images/feat-3.avif"
+              class="h-full w-full object-cover group-hover:scale-110 transition duration-500" />
+          </div>
+          <div class="p-6 space-y-3">
+            <h3 class="text-2xl font-semibold ">Interview Preparation</h3>
+            <p class="text-gray-300">
+              Mock interviews, resume polishing, and technical + HR interview guidance for students.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div
+          class="flex flex-col md:flex-row bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-green-500/30 transition group">
+          <div class="w-full md:w-[200px] h-[150px] flex-shrink-0">
+            <img src="./assets/images/feat-4.avif"
+              class="h-full w-full object-cover group-hover:scale-110 transition duration-500" />
+          </div>
+          <div class="p-6 space-y-3">
+            <h3 class="text-2xl font-semibold ">Tech Events & Challenges</h3>
+            <p class="text-gray-300">
+              Coding challenges, hackathons, AI activities, and tech competitions to boost creativity.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Why Choose Us -->
+  <section class="py-20 bg-slate-900 relative overflow-hidden">
+
+    <div class="absolute inset-0 bg-gradient-to-b from-green-500/5 to-transparent blur-3xl"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-20">
+        <h2 class="text-4xl font-bold mb-4">
+          Why Choose <span class="text-green-500">SPARKMENTO</span>?
+        </h2>
+        <p class="text-gray-400 text-lg">
+          We bridge classroom learning with real-world innovation through immersive, hands-on training.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-10">
+
+        <div class="group feature-card relative bg-slate-800 rounded-2xl p-10 border border-green-500/20 shadow-lg 
+                  hover:shadow-green-500/30 transition duration-300 hover:-translate-y-2">
+          <div class="absolute -top-6 left-1/2 -translate-x-1/2">
+            <div class="p-4 bg-slate-900 rounded-full border border-green-500/40 group-hover:scale-110 transition">
+              <i data-lucide="users" class="w-8 h-8 text-green-400"></i>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold mt-8 mb-3 text-center">Expert Mentors</h3>
+          <p class="text-gray-400 text-center">
+            Learn directly from senior industry professionals and experienced engineers.
           </p>
         </div>
 
-        <!-- Feature 2 -->
-        <div class="feature-card bg-slate-800 rounded-lg p-8 border border-green-500 border-opacity-20 text-center">
-          <div class="flex justify-center mb-4">
-            <i data-lucide="cpu" class="w-10 h-10 text-green-400 bg-green-500/20 p-2 rounded-[10px]"></i>
+        <div class="group feature-card relative bg-slate-800 rounded-2xl p-10 border border-green-500/20 shadow-lg 
+                  hover:shadow-green-500/30 transition duration-300 hover:-translate-y-2">
+          <div class="absolute -top-6 left-1/2 -translate-x-1/2">
+            <div class="p-4 bg-slate-900 rounded-full border border-green-500/40 group-hover:scale-110 transition">
+              <i data-lucide="cpu" class="w-8 h-8 text-green-400"></i>
+            </div>
           </div>
-          <h3 class="text-xl font-bold mb-3">AI-Powered Labs</h3>
-          <p class="text-gray-400">
-            State-of-the-art learning environment with cutting-edge tools
+          <h3 class="text-xl font-bold mt-8 mb-3 text-center">AI-Powered Labs</h3>
+          <p class="text-gray-400 text-center">
+            Work with cutting-edge AI, ML, and automation tools built for modern developers.
           </p>
         </div>
 
-        <!-- Feature 3 -->
-        <div class="feature-card bg-slate-800 rounded-lg p-8 border border-green-500 border-opacity-20 text-center">
-          <div class="flex justify-center mb-4">
-            <i data-lucide="hammer" class="w-10 h-10 text-green-400 bg-green-500/20 p-2 rounded-[10px]"></i>
+        <div class="group feature-card relative bg-slate-800 rounded-2xl p-10 border border-green-500/20 shadow-lg 
+                  hover:shadow-green-500/30 transition duration-300 hover:-translate-y-2">
+          <div class="absolute -top-6 left-1/2 -translate-x-1/2">
+            <div class="p-4 bg-slate-900 rounded-full border border-green-500/40 group-hover:scale-110 transition">
+              <i data-lucide="hammer" class="w-8 h-8 text-green-400"></i>
+            </div>
           </div>
-          <h3 class="text-xl font-bold mb-3">Project-Based Training</h3>
-          <p class="text-gray-400">
-            Build real-world projects that matter to your career
+          <h3 class="text-xl font-bold mt-8 mb-3 text-center">Project-Based Training</h3>
+          <p class="text-gray-400 text-center">
+            Build real-world applications with complete source code and deployment support.
           </p>
         </div>
 
-        <!-- Feature 4 -->
-        <div class="feature-card bg-slate-800 rounded-lg p-8 border border-green-500 border-opacity-20 text-center">
-          <div class="flex justify-center mb-4">
-            <i data-lucide="briefcase" class="w-10 h-10 text-green-400 bg-green-500/20 p-2 rounded-[10px]"></i>
+        <div class="group feature-card relative bg-slate-800 rounded-2xl p-10 border border-green-500/20 shadow-lg 
+                  hover:shadow-green-500/30 transition duration-300 hover:-translate-y-2">
+          <div class="absolute -top-6 left-1/2 -translate-x-1/2">
+            <div class="p-4 bg-slate-900 rounded-full border border-green-500/40 group-hover:scale-110 transition">
+              <i data-lucide="briefcase" class="w-8 h-8 text-green-400"></i>
+            </div>
           </div>
-          <h3 class="text-xl font-bold mb-3">Internship Support</h3>
-          <p class="text-gray-400">
-            Placement assistance and internship opportunities
+          <h3 class="text-xl font-bold mt-8 mb-3 text-center">Internship Support</h3>
+          <p class="text-gray-400 text-center">
+            Guaranteed internship pathways through our partnered companies.
           </p>
         </div>
 
-        <!-- Feature 5 -->
-        <div class="feature-card bg-slate-800 rounded-lg p-8 border border-green-500 border-opacity-20 text-center">
-          <div class="flex justify-center mb-4">
-            <i data-lucide="handshake" class="w-10 h-10 text-green-400 bg-green-500/20 p-2 rounded-[10px]"></i>
+        <div class="group feature-card relative bg-slate-800 rounded-2xl p-10 border border-green-500/20 shadow-lg 
+                  hover:shadow-green-500/30 transition duration-300 hover:-translate-y-2">
+          <div class="absolute -top-6 left-1/2 -translate-x-1/2">
+            <div class="p-4 bg-slate-900 rounded-full border border-green-500/40 group-hover:scale-110 transition">
+              <i data-lucide="handshake" class="w-8 h-8 text-green-400"></i>
+            </div>
           </div>
-          <h3 class="text-xl font-bold mb-3">Industry Collaboration</h3>
-          <p class="text-gray-400">
-            Partner with leading tech companies and organizations
+          <h3 class="text-xl font-bold mt-8 mb-3 text-center">Industry Collaboration</h3>
+          <p class="text-gray-400 text-center">
+            Build networks with companies, experts, founders & tech communities.
           </p>
         </div>
 
-        <!-- Feature 6 -->
-        <div class="feature-card bg-slate-800 rounded-lg p-8 border border-green-500 border-opacity-20 text-center">
-          <div class="flex justify-center mb-4">
-            <i data-lucide="award" class="w-10 h-10 text-green-400 bg-green-500/20 p-2 rounded-[10px]"></i>
+        <div class="group feature-card relative bg-slate-800 rounded-2xl p-10 border border-green-500/20 shadow-lg 
+                  hover:shadow-green-500/30 transition duration-300 hover:-translate-y-2">
+          <div class="absolute -top-6 left-1/2 -translate-x-1/2">
+            <div class="p-4 bg-slate-900 rounded-full border border-green-500/40 group-hover:scale-110 transition">
+              <i data-lucide="calendar" class="w-8 h-8 text-green-400"></i>
+            </div>
           </div>
-          <h3 class="text-xl font-bold mb-3">Certification</h3>
-          <p class="text-gray-400">
-            Industry-recognized certifications upon completion
+          <h3 class="text-xl font-bold mt-8 mb-3 text-center">Flexible Batches</h3>
+          <p class="text-gray-400 text-center">
+            Online, Offline, Weekend & Night batch options available.
           </p>
         </div>
+
       </div>
     </div>
   </section>
@@ -421,7 +485,7 @@
   <section id="internships" class="py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-2 gap-12 items-center">
-        <!-- Content -->
+
         <div class="space-y-6">
           <h2 class="text-4xl font-bold">Work on Real-World Projects</h2>
           <p class="text-gray-300 leading-relaxed text-lg">
@@ -432,93 +496,94 @@
             Learn by building — not memorizing.
           </p>
           <ul class="space-y-3 text-gray-300">
-            <li class="flex items-center font-bold">
-              <span class="text-green-400 mr-3 bg-green-400/20 px-2">✓</span> Live project
-              experience
+            <li class="flex items-center font-bold rou">
+              <span class="text-green-400 mr-3 bg-green-400/20 px-2 rounded">✓</span>
+              Live project experience
             </li>
             <li class="flex items-center font-bold">
-              <span class="text-green-400 mr-3 bg-green-400/20 px-2">✓</span> Industry mentorship
+              <span class="text-green-400 mr-3 bg-green-400/20 px-2 rounded">✓</span>
+              Industry mentorship
             </li>
             <li class="flex items-center font-bold">
-              <span class="text-green-400 mr-3 bg-green-400/20 px-2">✓</span> Portfolio building
+              <span class="text-green-400 mr-3 bg-green-400/20 px-2 rounded">✓</span>
+              Portfolio building
             </li>
             <li class="flex items-center font-bold">
-              <span class="text-green-400 mr-3 bg-green-400/20 px-2">✓</span> Job placement support
+              <span class="text-green-400 mr-3 bg-green-400/20 px-2 rounded">✓</span>
+              Job placement support
             </li>
           </ul>
-          <button class="btn-primary px-8 py-3 rounded-lg font-semibold text-slate-900 mt-4">
-            → Explore Internship Programs
-          </button>
+          <a href="#">
+            <button class="btn-primary px-8 py-3 rounded-lg font-semibold text-slate-900 mt-4">
+              Explore Internship Programs
+            </button>
+          </a>
         </div>
 
-        <!-- Visual -->
         <div
           class="bg-slate-800 rounded-lg h-96 flex items-center justify-center border border-green-400 border-opacity-30">
-          <!-- <div class="text-center"> -->
-          <!-- <div class="text-6xl mb-4"> -->
-          <img src="./assets/images/internship.png" class="h-[100%] w-[100%] object-cover">
-          <!-- </div> -->
-          <!-- <p class="text-gray-400">Internship & Projects</p> -->
-          <!-- </div> -->
+          <img src="./assets/images/internship.png" class="h-[100%] w-[100%] object-cover" />
         </div>
       </div>
     </div>
   </section>
 
   <!-- Journey Section -->
-  <section class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900 text-white">
-    <div class="max-w-5xl mx-auto text-center">
-      <h2 class="text-4xl font-bold mb-6">
-        From Academic Excellence to <br />
-        <span class="text-green-500">Tech Innovation</span>
-      </h2>
+  <section
+    class="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-900 to-bg-slate-900 text-white relative overflow-hidden">
+
+    <div class="absolute top-20 left-10 w-48 h-48 bg-green-500/10 blur-3xl rounded-full"></div>
+    <div class="absolute bottom-20 right-10 w-56 h-56 bg-green-400/10 blur-[150px] rounded-full"></div>
+
+    <div class="max-w-5xl mx-auto text-center relative z-10">
+      <h2 class="text-4xl font-bold mb-6"> From Academic Excellence to <br><span class="text-green-600">
+          Tech Innovation
+        </span></h2>
 
       <p class="text-gray-300 leading-relaxed text-lg max-w-3xl mx-auto">
-        SPARK LEARNINGS has been a trusted name in PSC and professional coaching for years.
-        With SPARKMENTO, we extend that trust into IT & AI training, preparing Kerala's youth
-        for tomorrow's digital world.
+        SPARK LEARNINGS has been a trusted name in PSC and professional education for years.
+        With <span class="text-green-400 font-semibold">SPARKMENTO</span>, we bring that same dedication into
+        IT & AI training empowering Kerala's youth for the future of technology.
       </p>
 
-      <div class="flex flex-col md:flex-row items-center justify-center gap-6 mt-12">
-        <!-- Card 1 -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
+
         <div
-          class=" hover:bg-[#0c1324] hover:border-green-600 rounded-2xl p-6 border border-gray-700 w-full md:w-1/3 transition-all duration-300">
+          class="group p-8 rounded-3xl border border-white/10 backdrop-blur-xl bg-white/5 shadow-xl hover:shadow-green-500/20 transition-all duration-500 hover:-translate-y-2">
           <div class="flex flex-col items-center">
-            <i class="fa-solid fa-book-open text-3xl text-green-500/80 mb-3"></i>
-            <h3 class="font-bold text-lg">PSC Coaching</h3>
-            <p class="text-gray-400 text-sm">Foundation & Excellence</p>
+            <div
+              class="w-16 h-16 flex items-center justify-center rounded-2xl bg-green-500/10 text-green-400 group-hover:bg-green-500/20 transition-all">
+              <i class="fa-solid fa-book-open text-3xl"></i>
+            </div>
+            <h3 class="font-bold text-xl mt-5">PSC Coaching</h3>
+            <p class="text-gray-400 text-sm mt-1">Foundation & Excellence</p>
           </div>
         </div>
 
-        <!-- Arrow -->
-        <div class="hidden md:flex text-green-500 text-3xl">
-          <i class="fa-solid fa-arrow-right"></i>
-        </div>
-
-        <!-- Card 2 -->
         <div
-          class="hover:bg-[#0c1324] hover:border-green-600 rounded-2xl p-6 border border-gray-700 w-full md:w-1/3 transition-all duration-300">
+          class="group p-8 rounded-3xl border border-white/10 backdrop-blur-xl bg-white/5 shadow-xl hover:shadow-green-500/20 transition-all duration-500 hover:-translate-y-2">
           <div class="flex flex-col items-center">
-            <i class="fa-solid fa-user-graduate text-3xl text-green-500/80 mb-3"></i>
-            <h3 class="font-bold text-lg">Career Mentorship</h3>
-            <p class="text-gray-400 text-sm">Guidance & Growth</p>
+            <div
+              class="w-16 h-16 flex items-center justify-center rounded-2xl bg-green-500/10 text-green-400 group-hover:bg-green-500/20 transition-all">
+              <i class="fa-solid fa-user-graduate text-3xl"></i>
+            </div>
+            <h3 class="font-bold text-xl mt-5">Career Mentorship</h3>
+            <p class="text-gray-400 text-sm mt-1">Guidance & Growth</p>
           </div>
         </div>
 
-        <!-- Arrow -->
-        <div class="hidden md:flex text-green-500 text-3xl">
-          <i class="fa-solid fa-arrow-right"></i>
-        </div>
-
-        <!-- Card 3 -->
         <div
-          class="hover:bg-[#0c1324] hover:border-green-600 rounded-2xl p-6 border border-gray-700 w-full md:w-1/3 transition-all duration-300">
+          class="group p-8 rounded-3xl border border-white/10 backdrop-blur-xl bg-white/5 shadow-xl hover:shadow-green-500/20 transition-all duration-500 hover:-translate-y-2">
           <div class="flex flex-col items-center">
-            <i class="fa-solid fa-rocket text-3xl text-green-500/80 mb-3"></i>
-            <h3 class="font-bold text-lg">SPARKMENTO AI</h3>
-            <p class="text-gray-400 text-sm">Innovation & Future</p>
+            <div
+              class="w-16 h-16 flex items-center justify-center rounded-2xl bg-green-500/10 text-green-400 group-hover:bg-green-500/20 transition-all">
+              <i class="fa-solid fa-rocket text-3xl"></i>
+            </div>
+            <h3 class="font-bold text-xl mt-5">SPARKMENTO AI</h3>
+            <p class="text-gray-400 text-sm mt-1">Innovation & Future</p>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -535,35 +600,30 @@
         skills and experience.
       </p>
 
-      <!-- Partner Logos Grid -->
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 items-center justify-center">
-        <!-- Industry Collaborations -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 items-center justify-center">
         <div
-          class=" p-6 rounded-xl border border-gray-700 hover:border-green-500 transition-all duration-300 flex flex-col items-center justify-center">
+          class="p-6 rounded-xl border border-gray-700 hover:border-green-500 transition-all duration-300 flex flex-col items-center justify-center">
           <i class="fa-solid fa-briefcase text-green-500 text-3xl mb-3"></i>
           <h4 class="text-base font-semibold">Industry Partners</h4>
           <p class="text-gray-500 text-sm">Real-world exposure</p>
         </div>
 
-        <!-- Academic Partnerships -->
         <div
-          class=" p-6 rounded-xl border border-gray-700 hover:border-green-500 transition-all duration-300 flex flex-col items-center justify-center">
-          <i class="fa-solid fa-graduation-cap  text-green-500 text-3xl mb-3"></i>
+          class="p-6 rounded-xl border border-gray-700 hover:border-green-500 transition-all duration-300 flex flex-col items-center justify-center">
+          <i class="fa-solid fa-graduation-cap text-green-500 text-3xl mb-3"></i>
           <h4 class="text-base font-semibold">Academic Alliances</h4>
           <p class="text-gray-500 text-sm">Trusted institutions</p>
         </div>
 
-        <!-- Certification Bodies -->
         <div
-          class=" p-6 rounded-xl border border-gray-700 hover:border-green-500 transition-all duration-300 flex flex-col items-center justify-center">
-          <i class="fa-solid fa-certificate text-green-500 text-3xl mb-3"></i>
-          <h4 class="text-base font-semibold">Certifying Authorities</h4>
-          <p class="text-gray-500 text-sm">Global standards</p>
+          class="p-6 rounded-xl border border-gray-700 hover:border-green-500 transition-all duration-300 flex flex-col items-center justify-center">
+          <i class="fa-solid fa-briefcase text-green-500 text-3xl mb-3"></i>
+          <h4 class="text-base font-semibold">Internship Opportunities</h4>
+          <p class="text-gray-500 text-sm">Gain real industry experience</p>
         </div>
 
-        <!-- Add More (Optional) -->
         <div
-          class=" p-6 rounded-xl border border-gray-700 hover:border-green-500 transition-all duration-300 flex flex-col items-center justify-center">
+          class="p-6 rounded-xl border border-gray-700 hover:border-green-500 transition-all duration-300 flex flex-col items-center justify-center">
           <i class="fa-solid fa-handshake text-green-500 text-3xl mb-3"></i>
           <h4 class="text-base font-semibold">Collaborations</h4>
           <p class="text-gray-500 text-sm">Innovation together</p>
@@ -583,137 +643,163 @@
         Technologies.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <button class="btn-primary px-8 py-4 rounded-lg font-semibold text-slate-900 text-lg">
-          Apply Now
-        </button>
-        <button class="btn-secondary px-8 py-4 rounded-lg font-semibold text-lg">
-          Request Callback
-        </button>
+        <a href="#contact">
+          <button class="btn-primary px-8 py-3 rounded-lg font-semibold text-slate-900 text-lg">
+            Apply Now
+          </button>
+        </a>
+        <a href="#contact">
+          <button class="btn-secondary px-8 py-2.5 rounded-lg font-semibold text-lg">
+            Request Callback
+          </button>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-20 bg-slate-900">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-2 gap-12">
-        <!-- Contact Info -->
+<!-- Contact Section -->
+<section id="contact" class="py-24 bg-gradient-to-b from-slate-900 to-slate-900 relative overflow-hidden">
+
+  <div class="absolute top-20 left-0 w-72 h-72 bg-green-500/10 blur-[120px] rounded-full"></div>
+  <div class="absolute bottom-10 right-0 w-80 h-80 bg-green-400/10 blur-[150px] rounded-full"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+      <div class="space-y-10">
+
+        <h2 class="text-4xl font-bold mb-6">
+          Get In <span class="text-green-500">Touch</span>
+        </h2>
+
         <div class="space-y-8">
-          <div>
-            <h2 class="text-3xl font-bold mb-6 text-white">Get In Touch</h2>
-            <div class="space-y-6">
-              <!-- Address -->
-              <div class="flex items-start gap-3">
-                <i class="fa-solid fa-location-dot text-green-500 text-xl mt-1"></i>
-                <div>
-                  <p class="text-green-500 font-semibold mb-1">Address</p>
-                  <p class="text-gray-300 leading-snug">
-                    SPARKMENTO AI TECH LABS<br />
-                    Trivandrum, Kanjiramkulam<br />
-                    Kerala, India
-                  </p>
-                </div>
-              </div>
 
-              <!-- Phone + Email Row -->
-              <div class="flex flex-col sm:flex-row gap-6">
-                <!-- Phone -->
-                <div class="flex items-start gap-3 flex-1">
-                  <i class="fa-solid fa-phone text-green-500 text-xl mt-1"></i>
-                  <div>
-                    <p class="text-green-500 font-semibold mb-1">Phone</p>
-                    <p class="text-gray-300">+91 XXXXXXXX</p>
-                  </div>
-                </div>
-
-                <!-- Email -->
-                <div class="flex items-start gap-3 flex-1">
-                  <i class="fa-solid fa-envelope text-green-500 text-xl mt-1"></i>
-                  <div>
-                    <p class="text-green-500 font-semibold mb-1">Email</p>
-                    <p class="text-gray-300 break-words">
-                      info.sparkmento@gmail.com
-                    </p>
-                  </div>
-                </div>
-              </div>
+          <div class="flex gap-4 items-start">
+            <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-green-500/10 border border-green-500/20 text-green-400 text-xl shadow-md">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div>
+              <p class="text-green-500 font-semibold text-sm uppercase tracking-wide">Address</p>
+              <p class="text-gray-300 mt-1 leading-relaxed">
+                SPARKMENTO AI TECH LABS<br>
+                Trivandrum, Kanjiramkulam, Kerala, India
+              </p>
             </div>
           </div>
 
-          <!-- Google Map -->
-          <div class="mt-10">
-            <h3 class="text-xl font-semibold mb-4 text-green-500">
-              Find Us on Map
-            </h3>
-            <div class="rounded-lg overflow-hidden border border-gray-700">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.490294389948!2d76.98704207355686!3d8.390431099755422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05baff0a969b0f%3A0x8ef5bde6fdf9b896!2sKanjiramkulam%2C%20Kerala!5e0!3m2!1sen!2sin!4v1698777762365!5m2!1sen!2sin"
-                width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div class="flex flex-col sm:flex-row sm:items-start gap-8">
+
+            <div class="flex gap-4 items-start">
+              <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-green-500/10 border border-green-500/20 text-green-400 text-xl shadow-md">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div>
+                <p class="text-green-500 font-semibold text-sm uppercase tracking-wide">Phone</p>
+                <p class="text-gray-300 mt-1">9048 190901</p>
+              </div>
             </div>
+
+      
+            <div class="flex gap-4 items-start">
+              <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-green-500/10 border border-green-500/20 text-green-400 text-xl shadow-md">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="break-all">
+                <p class="text-green-500 font-semibold text-sm uppercase tracking-wide">Email</p>
+                <p class="text-gray-300 mt-1">sparkmento.info@gmail.com</p>
+              </div>
+            </div>
+
           </div>
         </div>
 
-        <!-- Contact Form -->
-        <div class=" rounded-lg p-6 sm:p-8 border border-green-500/20">
-          <h3 class="text-2xl font-bold mb-6 text-white">Send us a Message</h3>
-          <form class="space-y-4">
-            <input type="text" placeholder="Your Name"
-              class="w-full bg-[#ffffff14] rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500" />
-            <input type="email" placeholder="Your Email"
-              class="w-full bg-[#ffffff14] rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500" />
-            <select
-              class="w-full bg-slate-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-green-500">
-              <option value="">Select Course Interested</option>
-              <option value="ai">AI & Machine Learning</option>
-              <option value="web">Web Development</option>
-              <option value="app">App Development</option>
-              <option value="iot">IoT & Embedded</option>
-            </select>
-
-            <textarea placeholder="Your Message" rows="4"
-              class="w-full bg-[#ffffff14] rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
-            <button class="btn-primary w-full  px-8 py-4 rounded-lg font-semibold text-slate-900 text-lg">
-              Send Message
-            </button>
-
-          </form>
+        <!-- Map -->
+        <div class="mt-10">
+          <h3 class="text-xl font-semibold text-green-500 mb-3">Find Us</h3>
+          <div class="rounded-xl overflow-hidden shadow-lg shadow-green-500/10 border border-white/10">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.490294389948!2d76.98704207355686!3d8.390431099755422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05baff0a969b0f%3A0x8ef5bde6fdf9b896!2sKanjiramkulam%2C%20Kerala!5e0!3m2!1sen!2sin!4v1698777762365!5m2!1sen!2sin"
+              class="w-full h-64 sm:h-72 md:h-64"
+              allowfullscreen="" loading="lazy">
+            </iframe>
+          </div>
         </div>
+
+      </div>
+
+      <!-- Contact Form -->
+      <div class="backdrop-blur-xl bg-white/5 border border-white/10 shadow-2xl rounded-xl p-6 sm:p-10 hover:shadow-green-500/10 transition-all duration-500">
+
+        <h3 class="text-3xl font-bold text-white mb-8">Send Us a Message</h3>
+
+        <form class="space-y-5">
+          <input type="text" placeholder="Your Name"
+            class="w-full bg-slate-800 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:ring-2 focus:ring-green-500 outline-none" />
+
+          <input type="email" placeholder="Your Email"
+            class="w-full bg-slate-800 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:ring-2 focus:ring-green-500 outline-none" />
+
+          <select
+            class="w-full bg-slate-800 border border-white/20 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-green-500 outline-none">
+            <option value="">Select Course</option>
+            <option>AI Powered Filmmaking</option>
+            <option>Digital Media Creations</option>
+            <option>Generative AI & Prompt Engineering</option>
+            <option>Full Stack Development</option>
+            <option>App Development (Flutter)</option>
+            <option>Python + Django</option>
+          </select>
+
+          <textarea rows="4" placeholder="Your Message"
+            class="w-full bg-slate-800 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:ring-2 focus:ring-green-500 outline-none"></textarea>
+
+          <button class="btn-primary w-full px-8 py-4 rounded-lg font-semibold text-slate-900 text-lg">
+            Send Message
+          </button>
+        </form>
+
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
 
   <!-- Footer -->
-  <footer class="bg-slate-950 border-t border-slate-800 pt-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-4 gap-8 mb-8">
+  <footer class="bg-slate-950 pt-16 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-green-500/5 to-transparent pointer-events-none"></div>
 
-        <!-- About -->
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-12 mb-12">
+
         <div>
-          <img src="./assets/images/logo2.png" alt="SPARKMENTO Logo" class="w-[50%]  mb-3" />
-          <p class="text-gray-400 text-sm">
-            A division of Spark Learnings, pioneering AI and IT training in Kerala.
+          <img src="./assets/images/logo2.png" alt="SPARKMENTO Logo" class="w-[45%] mb-4 opacity-90" />
+          <p class="text-gray-400 leading-relaxed text-sm">
+            A division of Spark Learnings, pioneering AI and IT training in Kerala with world-class programs.
           </p>
         </div>
 
         <!-- Quick Links -->
         <div>
-          <h4 class="font-bold mb-4 text-green-400">Quick Links</h4>
-          <ul class="space-y-2 text-gray-400 text-sm">
+          <h4 class="font-bold text-green-400 text-lg mb-5">Quick Links</h4>
+          <ul class="space-y-3 text-gray-300 text-sm">
             <li>
-              <a href="#courses" class="hover:text-green-400 flex items-center gap-2">
-                <i class="fa-solid fa-angle-right text-green-500 text-xs"></i> Courses
+              <a href="./courses/course.html" class=" group flex items-center gap-2 hover:text-green-400 transition">
+                <i class="fa-solid fa-angle-right text-green-500 text-xs group-hover:translate-x-1 transition"></i>
+                Courses
               </a>
             </li>
             <li>
-              <a href="#internships" class="hover:text-green-400 flex items-center gap-2">
-                <i class="fa-solid fa-angle-right text-green-500 text-xs"></i> Internships
+              <a href="#internships" class=" group flex items-center gap-2 hover:text-green-400 transition">
+                <i class="fa-solid fa-angle-right text-green-500 text-xs group-hover:translate-x-1 transition"></i>
+                Internships
               </a>
             </li>
             <li>
-              <a href="#contact" class="hover:text-green-400 flex items-center gap-2">
-                <i class="fa-solid fa-angle-right text-green-500 text-xs"></i> Contact
+              <a href="#contact" class=" group flex items-center gap-2 hover:text-green-400 transition">
+                <i class="fa-solid fa-angle-right text-green-500 text-xs group-hover:translate-x-1 transition"></i>
+                Contact
               </a>
             </li>
           </ul>
@@ -721,54 +807,60 @@
 
         <!-- Resources -->
         <div>
-          <h4 class="font-bold mb-4 text-green-400">Resources</h4>
-          <ul class="space-y-2 text-gray-400 text-sm">
+          <h4 class="font-bold text-green-400 text-lg mb-5">Resources</h4>
+          <ul class="space-y-3 text-gray-300 text-sm">
             <li>
-              <a href="#" class="hover:text-green-400 flex items-center gap-2">
-                <i class="fa-solid fa-angle-right text-green-500 text-xs"></i> Brochure
+              <a href="#" class="group flex items-center gap-2 hover:text-green-400 transition">
+                <i class="fa-solid fa-angle-right text-green-500 text-xs group-hover:translate-x-1 transition"></i>
+                Brochure
               </a>
             </li>
             <li>
-              <a href="#" class="hover:text-green-400 flex items-center gap-2">
-                <i class="fa-solid fa-angle-right text-green-500 text-xs"></i> FAQs
+              <a href="#" class="group flex items-center gap-2 hover:text-green-400 transition">
+                <i class="fa-solid fa-angle-right text-green-500 text-xs group-hover:translate-x-1 transition"></i>
+                FAQs
               </a>
             </li>
             <li>
-              <a href="#" class="hover:text-green-400 flex items-center gap-2">
-                <i class="fa-solid fa-angle-right text-green-500 text-xs"></i> Franchise Info
+              <a href="#" class="group flex items-center gap-2 hover:text-green-400 transition">
+                <i class="fa-solid fa-angle-right text-green-500 text-xs group-hover:translate-x-1 transition"></i>
+                Franchise Info
               </a>
             </li>
           </ul>
         </div>
 
-        <!-- Social -->
         <div>
-          <h4 class="font-bold mb-4 text-green-400">Connect</h4>
-          <p class="text-gray-400 text-sm mb-3">Follow us on social media</p>
-          <div class="flex gap-3">
+          <h4 class="font-bold text-green-400 text-lg mb-5">Connect</h4>
+          <p class="text-gray-400 text-sm mb-4">Follow us on social media</p>
+
+          <div class="flex gap-4">
             <a href="#"
-              class="w-9 h-9 bg-green-600 rounded flex items-center justify-center hover:bg-green-500 transition">
+              class="w-10 h-10 bg-green-600/20 border border-green-500/20 rounded-xl flex items-center justify-center hover:bg-green-600 hover:shadow-green-500/30 hover:shadow-lg transition">
               <i class="fa-brands fa-facebook-f text-white"></i>
             </a>
+
             <a href="#"
-              class="w-9 h-9 bg-pink-600 rounded flex items-center justify-center hover:bg-pink-500 transition">
+              class="w-10 h-10 bg-pink-600/20 border border-pink-500/20 rounded-xl flex items-center justify-center hover:bg-pink-600 hover:shadow-pink-500/30 hover:shadow-lg transition">
               <i class="fa-brands fa-instagram text-white"></i>
             </a>
-            <a href="#" class="w-9 h-9 bg-red-600 rounded flex items-center justify-center hover:bg-red-500 transition">
+
+            <a href="#"
+              class="w-10 h-10 bg-red-600/20 border border-red-500/20 rounded-xl flex items-center justify-center hover:bg-red-600 hover:shadow-red-500/30 hover:shadow-lg transition">
               <i class="fa-brands fa-youtube text-white"></i>
             </a>
+
             <a href="#"
-              class="w-9 h-9 bg-blue-600 rounded flex items-center justify-center hover:bg-blue-500 transition">
+              class="w-10 h-10 bg-blue-600/20 border border-blue-500/20 rounded-xl flex items-center justify-center hover:bg-blue-600 hover:shadow-blue-500/30 hover:shadow-lg transition">
               <i class="fa-brands fa-linkedin-in text-white"></i>
             </a>
           </div>
         </div>
       </div>
 
-      <!-- Bottom Footer -->
-      <div class="border-t border-slate-800 py-4 text-center text-gray-400 text-sm">
+      <div class="border-t border-slate-800 py-5 text-center text-gray-400 text-sm">
         <p>© 2025 SPARKMENTO AI TECH LABS — Skill to Success</p>
-        <p class="mt-2">A Division of Spark Learnings | Trivandrum, Kerala</p>
+        <p class="mt-1">A Division of Spark Learnings | Trivandrum, Kerala</p>
       </div>
     </div>
   </footer>
@@ -779,26 +871,8 @@
   <script>
     lucide.createIcons();
   </script>
-  <script>
+  <script src="./assets/js/main.js"></script>
 
-    window.addEventListener("scroll", function () {
-      const nav = document.querySelector(".nav-scroll");
-      if (window.scrollY > 50) {
-        nav.classList.add("scrolled");
-      } else {
-        nav.classList.remove("scrolled");
-      }
-    });
-
-    // Mobile menu toggle
-    const menuBtn = document.getElementById("menu-btn");
-    const mobileMenu = document.getElementById("mobile-menu");
-
-    menuBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-      menuBtn.classList.toggle("open");
-    });
-  </script>
 
 </body>
 
