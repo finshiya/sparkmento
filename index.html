@@ -12,9 +12,29 @@
   <link rel="stylesheet" href="./assets/style/style.css" />
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="./assets/images/favIcon.jpeg" />
+
+
 </head>
 
 <body class="bg-slate-950 text-white">
+
+<!--  Loader -->
+<div id="page-loader"
+     class="fixed inset-0 bg-black flex items-center justify-center z-[9999] transition-opacity duration-700">
+
+  <div class="relative w-20 h-20 flex items-center justify-center">
+
+    <div class="absolute w-full h-full border-4 border-green-500 border-t-transparent rounded-full animate-spin"></div>
+
+    <div class="absolute w-10 h-10 border-4 border-green-400/70 border-b-transparent rounded-full animate-spin-slow"></div>
+
+    <div class="absolute w-3 h-3 bg-green-400 rounded-full animate-ping"></div>
+
+  </div>
+
+</div>
+
+
   <!-- Navigation Bar -->
   <nav class="nav-scroll fixed w-full top-0 z-50 transition-all duration-300 ">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
